@@ -9,12 +9,16 @@ const success = (data) => {
 
 const signInSuccess = (data) => {
   store.user = data.user;
+  $('.nav > li').toggleClass('hidden');
+  $('.collapse').collapse('hide');
   success(data);
 };
 
 const signOutSuccess = () => {
-    success(store.user);
-    store.user = null;
+  store.user = null;
+  console.log('SIGN OUT SUCCESS!');
+  $('.nav > li').toggleClass('hidden');
+  success(store.user);
 };
 
 const failure = (error) => {
@@ -26,4 +30,5 @@ module.exports = {
   failure,
   success,
   signInSuccess,
+  signOutSuccess,
 };

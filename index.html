@@ -11,7 +11,6 @@
 </head>
 
 <body class="container">
-
 <!-- NAVBAR START -->
   <div class="container">
     <div class="row">
@@ -29,15 +28,10 @@
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="hidden"><a><button type="button" id="get-all-fighter-button" class="btn btn-link btn">Barracks</button></a></li>
-            </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="hidden"><a data-toggle="modal" data-target="#change-password-modal">Change Password</a></li>
-              <li class="hidden"><a><button type="button" id="sign-out-button" class="btn btn-link btn ">Sign Out</button></a></li>
               <!-- SIGN UP DROPDOWN START -->
               <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">Sign Up<b class="caret"></b></a>
+                <a class="dropdown-toggle" data-toggle="dropdown">Sign Up<b class="caret"></b></a>
                 <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
                   <li>
                     <div class="row">
@@ -47,10 +41,10 @@
                             <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
                           </div>
                           <div class="form-group">
-                            <input type="password" class="form-control" name="credentials[password]" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
                           </div>
                           <div class="form-group">
-                            <input type="password" class="form-control" name="credentials[password_confirmation]" id="exampleInputPassword1" placeholder="Password Confirmation">
+                            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirmation">
                           </div>
                           <button type="submit" class="btn btn-success btn-block">Sign Up</button>
                         </form>
@@ -62,7 +56,7 @@
               <!-- SIGN UP DROPDOWN END -->
               <!-- SIGN IN DROPDOWN START -->
               <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                <a class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
                 <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
                   <li>
                     <div class="row">
@@ -72,7 +66,7 @@
                             <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
                           </div>
                           <div class="form-group">
-                            <input type="password" class="form-control" name="credentials[password]" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
                           </div>
                           <button type="submit" class="btn btn-success btn-block">Sign in</button>
                         </form>
@@ -82,6 +76,31 @@
                 </ul>
               </li>
               <!-- SIGN IN DROPDOWN END -->
+              <!-- CHANGE PASSWORD DROPDOWN START -->
+              <li class="dropdown hidden">
+                <a class="dropdown-toggle" data-toggle="dropdown">Change Password<b class="caret"></b></a>
+                <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                  <li>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form id="change-password-form">
+                          <div class="form-group">
+                            <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+                          </div>
+                          <div class="form-group">
+                            <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+                          </div>
+                          <button type="submit" class="btn btn-success btn-block">Submit Change</button>
+                        </form>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <!-- CHANGE PASSWORD DROPDOWN END -->
+              <!-- SIGN OUT BUTTON START -->
+              <li class="hidden"><a><button type="button" id="sign-out-button" class="btn btn-link btn ">Sign Out</button></a></li>
+              <!-- SIGN OUT BUTTON END -->
             </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -90,34 +109,15 @@
     </div>
   </div>
 <!-- NAVBAR END -->
-  <div id="content">
-  </div>
-  <h1>API Token Auth</h1>
+  <h1>Products</h1>
   <hr>
   <div id='messages'>
     Not a message.
   </div>
   <hr>
+  <div id="content">
+  </div>
 
-  <form id="change-password">
-    <fieldset>
-      <legend>Change Password</legend>
-      <input type="password" name="passwords[old]" placeholder="Old Password">
-      <input type="password" name="passwords[new]" placeholder="New Password">
-      <input type="submit" name="submit" value="Change password!">
-    </fieldset>
-  </form>
-
-  <hr>
-
-  <form id="sign-out">
-    <fieldset>
-      <legend>Sign Out</legend>
-      <input type="submit" name="submit" value="Sign Out!">
-    </fieldset>
-  </form>
-
-  <p>Accessing an authenticated API.</p>
 </body>
 
 </html>

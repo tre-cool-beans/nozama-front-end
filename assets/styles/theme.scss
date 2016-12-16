@@ -1,0 +1,9 @@
+// To fix Sign Out Button padding
+.navbar-default .btn-link {
+  padding: 0;
+}
+
+// Fix to drop the content of the page down so navbar does not cover
+body {
+  padding-top: 65px;
+}
