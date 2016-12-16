@@ -19,7 +19,7 @@ const signIn = (data) =>
 
 const changePassword = (data) =>
   $.ajax({
-      url: config.host + '/change-password/' + store.user.id,
+      url: config.host + '/change-password/' + store.user._id,
       method: 'PATCH',
       data,
       headers: {
@@ -29,7 +29,7 @@ const changePassword = (data) =>
 
 const signOut = () =>
   $.ajax({
-    url: config.host + '/sign-out/' + store.user.id,
+    url: config.host + '/sign-out/' + store.user._id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token,
