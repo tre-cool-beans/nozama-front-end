@@ -2,6 +2,8 @@
 
 const store = require('../store');
 
+const content = require('../content-render');
+
 const success = (data) => {
   $('#messages').text('success');
   console.log(data);
@@ -14,7 +16,7 @@ const failure = (error) => {
 
 const indexProductsSuccess = (response_data) => {
   console.log(response_data);
-  $('#content').text(JSON.stringify(response_data));
+  content.renderProducts(response_data.products);
 };
 
 const indexProductsFailure = (response_data) => {
