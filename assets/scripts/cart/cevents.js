@@ -2,8 +2,8 @@
 
 const getFormFields = require(`../../../lib/get-form-fields`);
 
-const papi = require('./capi');
-const pui = require('./cui');
+const capi = require('./capi');
+const cui = require('./cui');
 
 const onUpdateCart = function (event) {
   event.preventDefault();
@@ -18,6 +18,9 @@ const onUpdateCart = function (event) {
 const onShowCart = function (event) {
   event.preventDefault();
   console.log("clicked cart");
+  capi.showCart()
+    .then(cui.showCartSuccess)
+    .catch(cui.failure);
 };
 
 const addHandlers = () => {
