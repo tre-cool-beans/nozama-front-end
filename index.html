@@ -63,10 +63,10 @@
                       <div class="col-md-12">
                         <form id="sign-in-form">
                           <div class="form-group">
-                            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+                            <input type="email" class="form-control" name="credentials[email]" value="test@test.com" placeholder="Email">
                           </div>
                           <div class="form-group">
-                            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                            <input type="password" class="form-control" name="credentials[password]" value="test" placeholder="Password">
                           </div>
                           <button type="submit" class="btn btn-success btn-block">Sign in</button>
                         </form>
@@ -76,6 +76,9 @@
                 </ul>
               </li>
               <!-- SIGN IN DROPDOWN END -->
+              <!-- CART BUTTON-->
+              <li class="hidden"><a><button type="button" id="cart-button" class="btn btn-link btn ">My Cart</button></a></li>
+              <!--CART END-->
               <!-- CHANGE PASSWORD DROPDOWN START -->
               <li class="dropdown hidden">
                 <a class="dropdown-toggle" data-toggle="dropdown">Change Password<b class="caret"></b></a>
