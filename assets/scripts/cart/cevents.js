@@ -15,8 +15,14 @@ const onUpdateCart = function (event) {
   //   .catch(pui.indexProductsFailure);
 };
 
+const onShowCart = function (event) {
+  event.preventDefault();
+  console.log("clicked cart");
+};
+
 const addHandlers = () => {
   $('.purchase').on('submit', onUpdateCart);
+  $('#cart-button').on('click', onShowCart);
 };
 
 module.exports = {
