@@ -2,17 +2,19 @@
 
 const getFormFields = require(`../../../lib/get-form-fields`);
 
+const store = require('../store');
 const capi = require('./capi');
 const cui = require('./cui');
 
 const onUpdateCart = function (event) {
   event.preventDefault();
-  let data = getFormFields(this);
+  let data = store.user.cart;
+  data.push(getFormFields(this));
   console.log("THIS IS DATA FROM ADD TO CART");
   console.log(data);
-  // papi.indexProducts()
-  //   .then(pui.indexProductsSuccess)
-  //   .catch(pui.indexProductsFailure);
+  capi.updateCart(data)
+    .then(cui.updateCartSuccess)
+    .catch(cui.failure);
 };
 
 const onShowCart = function (event) {
