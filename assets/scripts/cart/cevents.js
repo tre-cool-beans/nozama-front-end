@@ -23,11 +23,21 @@ const onShowCart = function (event) {
     .catch(cui.failure);
 };
 
-const addHandlers = () => {
+const addProductHandlers = () => {
+  $('.purchase').off('submit');
   $('.purchase').on('submit', onUpdateCart);
+};
+
+const addCartHandlers = () => {
+  console.log('CART HANDLERS HAVE BEEN TRIGGERED');
+};
+
+const addHandlers = () => {
   $('#cart-button').on('click', onShowCart);
 };
 
 module.exports = {
+  addProductHandlers,
+  addCartHandlers,
   addHandlers,
 };

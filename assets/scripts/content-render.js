@@ -5,16 +5,14 @@ const store = require('./store');
 const indexProducts = require('../templates/index-products.handlebars');
 const showCart = require('../templates/user-cart.handlebars');
 
-const cartEvents = require('./cart/cevents.js');
-
 const renderProducts = (products) => {
   $('#content').html(indexProducts(products));
-  cartEvents.addHandlers();
+  $('#content').trigger('show-product-change');
 };
 
 const renderCart = (user_data) => {
-  $('#content').html(showCart(user_data));
-  cartEvents.addHandlers();
+  $('#content').html(showCart(user_data.user.cart));
+  $('#content').trigger('show-cart-change');
 };
 
 // const renderWelcomePage = () => {
