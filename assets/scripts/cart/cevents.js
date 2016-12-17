@@ -6,18 +6,22 @@ const store = require('../store');
 const capi = require('./capi');
 const cui = require('./cui');
 
-const onUpdateCart = function (event) {
+const onUpdateCart = function(event) {
   event.preventDefault();
-  let data = store.user.cart;
+
+  let data = store.user.cart.slice();
   data.push(getFormFields(this));
-  console.log("THIS IS DATA FROM ADD TO CART");
-  console.log(data);
+
   capi.updateCart(data)
-    .then(cui.updateCartSuccess)
+    .then(function(response_data) {
+      cui.updateCartSuccess(response_data);
+      return capi.showCart();
+    })
+    .then(cui.getUserCartSuccess)
     .catch(cui.failure);
 };
 
-const onShowCart = function (event) {
+const onShowCart = function(event) {
   event.preventDefault();
   console.log("clicked cart");
   capi.showCart()
