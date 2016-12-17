@@ -8,6 +8,7 @@ const productEvents = require('./products/pevents.js');
 $(() => {
   authEvents.addHandlers();
   cartEvents.addHandlers();
+  productEvents.addHandlers();
 
   $('#content').on('show-cart-change', function() {
     cartEvents.addCartHandlers();

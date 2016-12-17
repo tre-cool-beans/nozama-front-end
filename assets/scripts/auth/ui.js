@@ -1,6 +1,7 @@
 'use strict';
 
 const store = require('../store');
+const productEvents = require('../products/pevents');
 
 const success = (data) => {
   $('#messages').text('success');
@@ -19,6 +20,7 @@ const signOutSuccess = () => {
   console.log('SIGN OUT SUCCESS!');
   $('.nav > li').toggleClass('hidden');
   success(store.user);
+  productEvents.onIndexProducts();
 };
 
 const failure = (error) => {

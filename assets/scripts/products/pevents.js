@@ -11,6 +11,11 @@ const onIndexProducts = function () {
     .catch(pui.indexProductsFailure);
 };
 
+const addHandlers = function () {
+  $('#home-button').on('click', onIndexProducts);
+};
+
 module.exports = {
   onIndexProducts,
+  addHandlers,
 };
