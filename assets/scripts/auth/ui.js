@@ -10,7 +10,7 @@ const success = (data) => {
 
 const signInSuccess = (data) => {
   store.user = data.user;
-  $('.nav > li').toggleClass('hidden');
+  $('.nav-list > li').toggleClass('hidden');
   $('.collapse').collapse('hide');
   success(data);
 };
@@ -18,7 +18,7 @@ const signInSuccess = (data) => {
 const signOutSuccess = () => {
   store.user = null;
   console.log('SIGN OUT SUCCESS!');
-  $('.nav > li').toggleClass('hidden');
+  $('.nav-list > li').toggleClass('hidden');
   success(store.user);
   productEvents.onIndexProducts();
 };
