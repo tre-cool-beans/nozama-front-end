@@ -1,0 +1,106 @@
+/**
+ *
+ * Buttons
+ *
+ */
+.btn {
+	font-size: 12px;
+	cursor: pointer;
+	padding: 0 35px;
+	line-height: 43px;
+	display: inline-block;
+	margin: 0 15px 15px 0;
+	height: 48px;
+	text-decoration: none;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	background: @btn-default-color;
+	color: @btn-text-color;
+	border: 2px solid @btn-default-color;
+	border-radius: 0;
+	.transition(all 0.3s);
+	
+	&:hover,
+	&:active,
+	&:focus {
+		color: @btn-text-color;
+		top: 0;
+		text-decoration: none;
+		background-color: @btn-hover-color;
+		box-shadow: none;
+		border: 2px solid @btn-hover-color;
+	}
+	&.pull-right ,
+	&.pull-left {
+		margin: 0;
+	}
+}
+
+.btn-outline,
+.btn-outline-w {
+	background: transparent;
+	border: 2px solid @btn-default-color;
+	box-shadow: none;
+	color: @btn-default-color;
+	text-decoration: none;
+	
+	&:hover,
+	&:focus {
+		background: @btn-default-color;
+		border-color: @btn-default-color;
+		color: @btn-text-color;
+		top:0;
+		text-decoration: none;
+	}
+}
+.btn-outline-w {
+	border-color: #FFF;
+	color: #FFF;
+
+	&:hover,
+	&:focus {
+		color: @btn-text-color;
+		top: 0;
+		text-decoration: none;
+		background-color: @btn-hover-color;
+		box-shadow: none;
+		border: 2px solid @btn-hover-color;
+	}	
+}
+
+.btn-disable,
+.btn-disable:hover,
+.btn-disable:focus {
+	background: #ddd;
+	border-color: #ddd;
+}
+
+.btn-right {
+	margin-right: 0;
+	float: right;
+
+	@media (max-width: 767px) {
+		text-align: center;
+		float: none;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+.btn i {
+	font-style: normal;
+	font-size: 16px;
+	vertical-align: sub;
+
+	&:before {
+		line-height: 39px; 
+	} 
+	&.left {
+		padding-right: 10px;
+	}
+	&.right {
+		padding-left: 10px;
+	}
+}

@@ -8,14 +8,22 @@
 <div class="row">
   <div class="col-lg-12 text-center">
   {{#each this}}
-      <li>
-        <h1><small>{{title}}</small></h1>
-        <img src="{{image_url}}">
-        <p>{{description}}</p>
-        <p>${{price}}</p>
-        <p>{{size}}</p>
-        <p>{{quantity}}</p>
-        <button type="button" class="btn btn-default">Remove</button>
+  <div class="media">
+  <div class="media-left">
+    <a href="{{image_url}}">
+      <img class="media-object image-responsive" style="height:64px: width:64px:" src="{{image_url}}" alt="product">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{title}}</h4>
+    <p>{{description}}</p>
+    <p>${{price}}</p>
+    <p>{{size}}</p>
+    <p>{{quantity}}</p>
+
+  </div>
+  <button type="button" class="btn btn-default">Remove</button>
+</div>
       </li>
   {{/each}}
   </div>

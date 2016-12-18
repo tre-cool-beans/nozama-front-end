@@ -1,0 +1,66 @@
+
+html, body {
+	font-family: @font-family-base;
+	font-weight: 400;
+	color: @text-color;
+	font-size: @font-size-base;
+}
+body {
+	background-color: @body-bg;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 400;
+}
+h1 span {
+	font-weight: 700;
+}
+
+hr {
+	border-top: 2px solid @brand-secondary;
+	margin: 15px 0;
+}
+
+ul,ol {
+    padding-left: 18px;
+}
+ol li{
+	padding-left: 5px;
+}
+
+a {
+	color: @link-color;
+	text-decoration: none;
+	font-weight: 400;
+	
+	.transition(all 0.3s);
+
+	&:hover{	
+		color: @link-color;
+		text-decoration: underline;
+	}
+	&:focus {
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+.color {
+	background-color: @brand-primary;
+}
+
+#home {
+	border-top: 8px solid @brand-primary;
+}
+
+.container-fluid {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 1200px; 
+}
+
+.title h2{
+	margin-bottom: 20px;
+	border-bottom: 2px solid @brand-secondary;
+	padding-bottom: 15px;
+	font-weight: 400;
+}

@@ -8,7 +8,7 @@ module.exports = {
     entry: {
       bundle: './index.js',
       specs: './spec/_all.js',
-      vendor: ['jquery', 'bootstrap-sass'],
+      vendor: ['jquery', 'bootstrap-less'],
     },
 
     output: {
@@ -43,6 +43,11 @@ module.exports = {
         {
           test: /\.scss/,
           loader: 'style!css!sass',
+          includePaths: [path.resolve(__dirname, './node_modules')],
+        },
+        {
+          test: /\.less/,
+          loader: 'style!css!less',
           includePaths: [path.resolve(__dirname, './node_modules')],
         },
         {

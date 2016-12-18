@@ -1,0 +1,118 @@
+/**
+ *
+ * Product list
+ *
+ */
+.productlist a .product-price {
+	.transition(all .3s ease-out);
+	color: @text-color;
+}
+	
+
+.productlist{
+	
+	a:hover .product-price {
+		background-color: #000;
+		color: #FFF;
+	}
+	.product {
+		padding-top: 0;
+		padding-bottom: 50px;
+	}
+	.row {
+	    margin-right: 0;
+	    margin-left: 0;
+	    @media (max-width: 767px) { 
+	    	 margin-right: -15px;
+		    margin-left: -15px;
+		 }   
+	}
+	.col-sm-12,
+	.col-sm-8,
+	.col-sm-6,
+	.col-sm-4 {
+		position: relative;
+		min-height: 1px;
+		padding: 2px;
+
+		@media (max-width: 767px) { 
+			min-height: 1px;
+			padding: 0 15px 15px 15px;
+		}
+	}
+	.col-sm-4.special {
+		padding: 0;
+	}
+	.productlist-price-container {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		max-width: 90%;
+		text-align: right;
+		z-index: 89;
+		margin: 22px;
+
+		@media (max-width: 767px) { 
+			margin: 30px;
+		}
+	}
+	.productlist-love-container {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		max-width: 50%;
+		text-align: left;
+		z-index: 89;
+		margin: 22px;
+		font-size: 20px;
+		line-height: 20px;
+	}
+	.product-price {
+		background-color: #fff;
+		display: inline-block;
+		padding: .7em 1.1em;
+		font-size: 11px;
+		text-transform: none;
+		letter-spacing: 1px;
+		font-weight: bold;
+		font-style: normal;
+		line-height: 1.3em;
+		
+		.original-price {
+			text-decoration: line-through;
+			margin-left: .5em;
+		}
+	}
+}
+
+
+.price:before {
+	content: '$';
+}
+
+.productlist-label {
+	position: absolute;
+	top: 26px;
+	right: 22px;
+
+	@media (max-width: 767px) { 
+		top: 18px;
+		right: 30px;
+	}	
+}
+
+.sold-out-label, 
+.sale-label {
+	color: @brand-primary;
+	font-weight: 400;
+	text-transform: uppercase;
+	padding: 3px 9px;
+	border: 2px solid @brand-primary;
+}
+.sale-label {
+	color: #000;
+	border-color: #000;
+}
+.show-more {
+	margin-top: 30px;
+}

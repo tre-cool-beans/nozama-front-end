@@ -1,0 +1,48 @@
+/**
+ *
+ * Accordion
+ *
+ */
+.panel-group { 
+	margin-bottom: 0;
+	.panel {
+		border-radius: 0;
+		margin-top: 0;
+		border:0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		background-color: transparent;
+	}
+	.panel+.panel {
+		margin-top: 15px;
+	}
+	.panel-body {
+		padding: 15px 0;
+	}
+	.panel-heading {
+		border-radius: 0;
+		background-color: @brand-secondary;
+	}
+	.panel-heading+.panel-collapse>.panel-body {
+		border: 0;
+	}
+	.panel-title{ 
+
+		a{
+			font-weight: 700;
+			font-size: 16px;
+			color: @brand-primary;
+			&.collapsed{
+				color: @text-color;
+			}
+			&:hover{
+				text-decoration: none;
+				color: @brand-primary;
+			}
+		}
+			
+	}
+	.panel-collapse {
+		padding: 0 15px;
+	}
+}

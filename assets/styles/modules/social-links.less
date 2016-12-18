@@ -1,0 +1,39 @@
+/**
+ *
+ * Social links
+ *
+ */
+
+.social-links{
+	list-style:none;
+	margin: 8px 0 0 0;
+	padding:0;
+	margin-right: -9px;
+	
+	li{
+		display:inline-block;
+		margin: 0 9px 0 9px;
+		border-radius:3px;
+		box-shadow:0 4px 0 transparent;
+		a {
+			background: transparent;
+			border: 2px solid @text-color;
+			display:block;
+			color:@text-color;
+			font-size: 16px;
+			width: 41px;
+			height: 41px;
+			line-height: 40px;
+			text-align:center;
+			border-radius: 50%;
+			.transition(all .3s ease-out);
+			
+			&:hover {
+				color:#FFF;
+				background:@text-color;
+				text-decoration: none;
+				border-color: @text-color;
+			}
+		}
+	}
+}		
