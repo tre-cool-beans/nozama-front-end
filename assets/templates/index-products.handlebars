@@ -13,15 +13,17 @@
       <img src="{{image_url}}">
       <p>${{price}}</p>
 
-      {{!-- NEED TO MAKE INVISIBLE FORM VALUES THAT HAVE ALL PRODUCT INFO --}}
-
       <form class="purchase">
-        <select name="Size">
+        <input type="hidden" name="title" value="{{title}}">
+        <input type="hidden" name="description" value="{{description}}">
+        <input type="hidden" name="price" value="{{price}}">
+        <input type="hidden" name="image_url" value="{{image_url}}">
+        <select name="size">
           {{#each sizes}}
           <option value="{{this}}">{{this}}</option>
           {{/each}}
         </select>
-        <select name="Quantity">
+        <select name="quantity">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
