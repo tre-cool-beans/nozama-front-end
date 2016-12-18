@@ -3,6 +3,11 @@
 const store = require('../store');
 const content = require('../content-render');
 
+const failure = (error) => {
+  $('#messages').text('fail');
+  console.error(error);
+};
+
 const success = (data) => {
   $('#messages').text('success');
   console.log(data);
@@ -14,29 +19,18 @@ const showCartSuccess = (user_data) => {
   console.log(user_data);
 };
 
-const signInSuccess = (data) => {
-  store.user = data.user;
-  $('.nav > li').toggleClass('hidden');
-  $('.collapse').collapse('hide');
-  success(data);
-};
-
-const signOutSuccess = () => {
-  store.user = null;
-  console.log('SIGN OUT SUCCESS!');
-  $('.nav > li').toggleClass('hidden');
-  success(store.user);
-};
-
-const failure = (error) => {
-  $('#messages').text('fail');
-  console.error(error);
+// Response will be entire user object, when successful
+// on making the response to updateCart just return
+// the new cart, need to change
+const updateCartSuccess = (user_data) => {
+  $('#messages').text('ADDED TO CART SUCCESSFULLY!');
+  console.log('RESPONSE FROM UPDATE CART, USER OBJ: ');
+  console.log(user_data);
 };
 
 module.exports = {
   failure,
   success,
   showCartSuccess,
-  signInSuccess,
-  signOutSuccess,
+  updateCartSuccess,
 };
