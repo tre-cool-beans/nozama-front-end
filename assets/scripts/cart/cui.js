@@ -19,13 +19,13 @@ const showCartSuccess = (user_data) => {
   console.log(user_data);
 };
 
-// Response will be entire user object, when successful
-// on making the response to updateCart just return
-// the new cart, need to change
-const updateCartSuccess = (user_data) => {
+// If updateCart PATCH is successful it responds with
+// the updated user's cart (response_data.cart)
+const updateCartSuccess = (response_data) => {
   $('#messages').text('ADDED TO CART SUCCESSFULLY!');
-  console.log('RESPONSE FROM UPDATE CART, USER OBJ: ');
-  console.log(user_data);
+  // Update user cart data stored locally by setting
+  // the response cart to the store user cart
+  store.user.cart = response_data.cart;
 };
 
 module.exports = {
