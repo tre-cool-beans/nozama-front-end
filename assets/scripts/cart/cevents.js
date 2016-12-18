@@ -7,12 +7,10 @@ const cui = require('./cui');
 
 const onUpdateCart = function (event) {
   event.preventDefault();
-  let data = getFormFields(this);
-  console.log("THIS IS DATA FROM ADD TO CART");
-  console.log(data);
-  // papi.indexProducts()
-  //   .then(pui.indexProductsSuccess)
-  //   .catch(pui.indexProductsFailure);
+  let cart_product = getFormFields(this);
+  capi.updateCart(cart_product)
+    .then(cui.updateCartSuccess)
+    .catch(cui.failure);
 };
 
 const onShowCart = function (event) {
