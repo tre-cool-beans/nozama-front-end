@@ -4,28 +4,69 @@
   Not a message.
 </div>
 <hr>
+<div class="col-sm-8">
 
-<div class="row">
-  <div class="col-lg-12 text-center">
-  {{#each this}}
-  <div class="media">
-  <div class="media-left">
-    <a href="{{image_url}}">
-      <img class="media-object image-responsive" style="height:64px: width:64px:" src="{{image_url}}" alt="product">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">{{title}}</h4>
-    <p>{{description}}</p>
-    <p>${{price}}</p>
-    <p>{{size}}</p>
-    <p>{{quantity}}</p>
+<table class="table">
+						  <thead>
+							<tr>
+							  <th>Item</th>
+							  <th>Unit Cost</th>
+							  <th class="text-center">Quantity</th>
+							  <th class="text-right">Total</th>
+							  <th></th>
+							</tr>
+						  </thead>
+						  <tbody>
+								{{#each this}}
+							<tr>
+	  	 					<td class="vert-align">{{title}}</td>
+								<td class="vert-align">{{price}}</td>
+								<td class="text-center vert-align">{{quantity}}</td>
+								<td class="text-right vert-align">{{price}}{{quantity}}</td>
+								<td class="text-center vert-align"><i  class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
+							</tr>
+							{{else}}
+							<tr>
+								<td colspan="5">
+									<h2 class="text-center">Your cart is empty.</h2>
+								</td>
+							</tr>
+								{{/each}}
+						  </tbody>
+						</table>
+					</div>
 
-  </div>
-  <button type="button" class="btn btn-default">Remove</button>
-</div>
-      </li>
-  {{/each}}
-  </div>
+						<div class="col-sm-4 "  ng-if="total() > 0">
+							<table class="table">
+							  <thead>
+								<tr>
+								  <th colspan="3" class="text-center">Order sumary</th>
+								</tr>
+							  </thead>
+							  <tbody>
+								<tr>
+								  <td>Sub total:</td>
+								  <td></td>
+								  <td class="text-right"><b></b></td>
+								</tr>
+								<tr>
+								  <td>Shipping cost:</td>
+								  <td></td>
+								  <td class="text-right"></td>
+								</tr>
+								<tr>
+								  <td>Tax:</td>
+								  <td></td>
+								  <td class="text-right"></td>
+								</tr>
+								<tr>
+								  <td>Total:</td>
+								  <td></td>
+								  <td id="total" class="text-right"></td>
+								</tr>
+							  </tbody>
+							</table>
 
-</div>
+							<a class="btn btn-right">Checkout</a>
+					</div>
+				</div>
