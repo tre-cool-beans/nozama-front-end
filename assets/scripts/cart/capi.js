@@ -18,7 +18,18 @@ const showCart = () =>
       },
   });
 
+const updateCart = (data) =>
+  $.ajax({
+      url: config.host + '/update-cart/' + store.user._id,
+      method: 'PATCH',
+      data,
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
+  });
+
 module.exports = {
   indexProducts,
   showCart,
+  updateCart,
 };
