@@ -2,7 +2,7 @@
 
 // const getFormFields = require(`../../../lib/get-form-fields`);
 
-const store = require('./store');
+const store = require('../store');
 
 const poapi = require('./poapi');
 const poui = require('./poui');
@@ -16,17 +16,21 @@ const onIndexPastOrders = function (event) {
 
 const onCreatePastOrder = function(event) {
   event.preventDefault();
-  let data = {};
-  data.total_price = 0;
-  data.cart = store.user.cart;
-  data.comment = "This is just a TEST of onCreatePastOrder!";
+  let data = {
+    pastorder: {
+      comment: "This is just a TEST of onCreatePastOrder!",
+      cart: store.user.cart,
+      total_price: 0
+    }
+  };
 
   // Copy this code out to create total_price key
   for (let i = 0; i < store.user.cart.length; i++) {
-    data.total_price += store.user.cart[i].price;
+    data.pastorder.total_price += store.user.cart[i].price;
   }
   // Copy ^ that code out to create total_price key
-
+  console.log("THIS IS PAST ORDER SENDING DATA: ");
+  console.log(data);
   poapi.createPastOrder(data)
     .then(poui.createPastOrderSuccess)
     .catch(poui.failure);
@@ -46,7 +50,6 @@ const addPastOrderHandlers = () => {
 
 const addHandlers = () => {
   $('#past-orders-button').on('click', onIndexPastOrders);
-
 };
 
 module.exports = {
