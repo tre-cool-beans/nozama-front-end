@@ -4,37 +4,23 @@
 <head>
   <title>Nozama</title>
 
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
-<body class="container">
-<!-- NAVBAR START -->
-  <div class="container">
+<body id="home">
+  <!-- NAVBAR START -->
     <div class="container-fluid">
-			<div class="menu-wrapper">
-				<a href="#" class="close-menu visible-xs"><i class="icon-close"></i></a>
-				<h3 class="visible-xs">Navigation</h3>
-				<ul class="nav-list text-center effect">
-
-					<li class="active"><a href="">Shop</a></li>
-					<li><a href="login.html">Register</a></li>
-					<li><a href="login.html">Login</a></li>
-				</ul>
-			</div>
-		</div>
-
-    <div class="container-fluid">
-			<div class="menu-wrapper">
-				<a href="#" class="close-menu visible-xs"><i class="icon-close"></i></a>
-				<h3 class="visible-xs">Navigation</h3>
-				<ul class="nav-list text-center effect">
+      <div class="menu-wrapper">
+        <a href="#" class="close-menu visible-xs"><i class="icon-close"></i></a>
+        <h3 class="visible-xs">Navigation</h3>
+        <ul class="nav-list pull-right effect">
           <!-- SIGN UP DROPDOWN START -->
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown">Sign Up<b class="caret"></b></a>
-            <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+            <ul class="dropdown-menu sign-up-dropdown" style="padding: 15px;min-width: 250px;">
               <li>
                 <div class="row">
                   <div class="col-md-12">
@@ -59,7 +45,7 @@
           <!-- SIGN IN DROPDOWN START -->
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
-            <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+            <ul class="dropdown-menu sign-in-dropdown" style="padding: 15px;min-width: 250px;">
               <li>
                 <div class="row">
                   <div class="col-md-12">
@@ -79,7 +65,7 @@
           </li>
           <!-- SIGN IN DROPDOWN END -->
           <!-- HOME BUTTON-->
-          <li class="hidden"><a id="home-button" >Home</a></li>
+          <li class="hidden"><a id="home-button">Home</a></li>
           <!--HOME BUTTON END-->
           <!-- CART BUTTON-->
           <li class="hidden"><a id="cart-button">My Cart</a></li>
@@ -87,7 +73,7 @@
           <!-- CHANGE PASSWORD DROPDOWN START -->
           <li class="dropdown hidden">
             <a class="dropdown-toggle" data-toggle="dropdown">Change Password<b class="caret"></b></a>
-            <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+            <ul class="dropdown-menu change-password-dropdown" style="padding: 15px;min-width: 250px;">
               <li>
                 <div class="row">
                   <div class="col-md-12">
@@ -109,123 +95,20 @@
           <!-- SIGN OUT BUTTON START -->
           <li class="hidden"><a id="sign-out-button">Sign Out</a></li>
           <!-- SIGN OUT BUTTON END -->
-				</ul>
-			</div>
-		</div>
-    <div id="main-nav" class="">
-      				<div class="container-fluid">
-					<div class="nav-header">
-							<a href="index.html" class="nav-brand">NOZA<span>MA</span></a>
-							<a class="nav-icon pull-right visible-xs menu-link" href="#"><i class="icon-menu2"></i></a>
-							<a class="nav-icon-outline cart pull-right" href="cart.html"><i class="icon-cart"></i><span class="badge"></span></a>
-						</div>
-				</div>
-			</div>
-    <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                 <span class="sr-only">Toggle navigation</span>
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-                 </button>
-            <a class="navbar-brand">Nozama</a>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <!-- SIGN UP DROPDOWN START -->
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown">Sign Up<b class="caret"></b></a>
-                <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <form id="sign-up-form">
-                          <div class="form-group">
-                            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-                          </div>
-                          <div class="form-group">
-                            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-                          </div>
-                          <div class="form-group">
-                            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirmation">
-                          </div>
-                          <button type="submit" class="btn btn-success btn-block">Sign Up</button>
-                        </form>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <!-- SIGN UP DROPDOWN END -->
-              <!-- SIGN IN DROPDOWN START -->
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
-                <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <form id="sign-in-form">
-                          <div class="form-group">
-                            <input type="email" class="form-control" name="credentials[email]" value="test@test.com" placeholder="Email">
-                          </div>
-                          <div class="form-group">
-                            <input type="password" class="form-control" name="credentials[password]" value="test" placeholder="Password">
-                          </div>
-                          <button type="submit" class="btn btn-success btn-block">Sign in</button>
-                        </form>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <!-- SIGN IN DROPDOWN END -->
-              <!-- HOME BUTTON-->
-              <li class="hidden"><a><button type="button" id="home-button" class="btn btn-link btn ">Home</button></a></li>
-              <!--HOME BUTTON END-->
-              <!-- CART BUTTON-->
-              <li class="hidden"><a><button type="button" id="cart-button" class="btn btn-link btn ">My Cart</button></a></li>
-              <!--CART BUTTON END-->
-              <!-- CHANGE PASSWORD DROPDOWN START -->
-              <li class="dropdown hidden">
-                <a class="dropdown-toggle" data-toggle="dropdown">Change Password<b class="caret"></b></a>
-                <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <form id="change-password-form">
-                          <div class="form-group">
-                            <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
-                          </div>
-                          <div class="form-group">
-                            <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
-                          </div>
-                          <button type="submit" class="btn btn-success btn-block">Submit Change</button>
-                        </form>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <!-- CHANGE PASSWORD DROPDOWN END -->
-              <!-- SIGN OUT BUTTON START -->
-              <li class="hidden"><a><button type="button" id="sign-out-button" class="btn btn-link btn ">Sign Out</button></a></li>
-              <!-- SIGN OUT BUTTON END -->
-            </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-        </nav>
+        </ul>
       </div>
     </div>
-  </div>
-<!-- NAVBAR END -->
 
-  <div id="content" class="container">
-  </div>
+    <div id="main-nav" class="">
+      <div class="container-fluid">
+        <div class="nav-header">
+          <a href="index.html" class="nav-brand">NOZA<span>MA</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="content" class="container">
+    </div>
 
 </body>
 
