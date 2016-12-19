@@ -18,10 +18,10 @@ const showCart = () =>
       },
   });
 
-const updateCart = (data) =>
+const createCartProduct = (data) =>
   $.ajax({
-      url: config.host + '/update-cart/' + store.user._id,
-      method: 'PATCH',
+      url: config.host + '/cart/' + store.user._id,
+      method: 'POST',
       data,
       headers: {
         Authorization: 'Token token=' + store.user.token,
@@ -31,5 +31,5 @@ const updateCart = (data) =>
 module.exports = {
   indexProducts,
   showCart,
-  updateCart,
+  createCartProduct,
 };

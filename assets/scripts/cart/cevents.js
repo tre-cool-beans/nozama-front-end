@@ -5,11 +5,11 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const capi = require('./capi');
 const cui = require('./cui');
 
-const onUpdateCart = function (event) {
+const onCreateCartProduct = function (event) {
   event.preventDefault();
   let cart_product = getFormFields(this);
-  capi.updateCart(cart_product)
-    .then(cui.updateCartSuccess)
+  capi.createCartProduct(cart_product)
+    .then(cui.createCartProductSuccess)
     .catch(cui.failure);
 };
 
@@ -25,7 +25,7 @@ const onShowCart = function (event) {
 
 const addCartProductHandlers = () => {
   $('.purchase').off('submit');
-  $('.purchase').on('submit', onUpdateCart);
+  $('.purchase').on('submit', onCreateCartProduct );
 };
 
 const addCartHandlers = () => {

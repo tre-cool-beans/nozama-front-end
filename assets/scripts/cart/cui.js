@@ -22,7 +22,7 @@ const showCartSuccess = (user_data) => {
 
 // If updateCart PATCH is successful it responds with
 // the updated user's cart (response_data.cart)
-const updateCartSuccess = (response_data) => {
+const createCartProductSuccess = (response_data) => {
   $('#messages').text('ADDED TO CART SUCCESSFULLY!');
   // Update user cart data stored locally by setting
   // the response cart to the store user cart
@@ -33,5 +33,5 @@ module.exports = {
   failure,
   success,
   showCartSuccess,
-  updateCartSuccess,
+  createCartProductSuccess,
 };
