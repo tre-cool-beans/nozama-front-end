@@ -7,18 +7,17 @@
 
 <div class="container-fluid productlist">
   {{#each this}}
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-      <h4>{{title}}</h4>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
     <a>
       <img class="img-responsive" src="{{image_url}}">
       <span class="productlist-price-container">
-        <span class="product-price">
+          <span>{{title}}</span>
+          <br>
           <span class="price">{{price}}</span>
-        </span>
       </span>
     </a>
 
-      <form class="purchase myform">
+      <form class="hidden purchase myform">
         <input type="hidden" name="title" value="{{title}}">
         <input type="hidden" name="description" value="{{description}}">
         <input type="hidden" name="price" value="{{price}}">
