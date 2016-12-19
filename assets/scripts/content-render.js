@@ -14,6 +14,9 @@ const renderProducts = (products) => {
 const renderCart = (user_data) => {
   $('#content').html(showCart(user_data.user.cart));
   $('#content').trigger('show-cart-change');
+
+  // Triggering these handlers may need to be done elsewhere
+  $('#content').trigger('show-past-order-change');
 };
 
 const renderPastOrders = (past_orders) => {
