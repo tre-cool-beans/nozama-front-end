@@ -7,10 +7,10 @@
 	.transition(all .3s ease-out);
 	color: @text-color;
 }
-	
+
 
 .productlist{
-	
+
 	a:hover .product-price {
 		background-color: #000;
 		color: #FFF;
@@ -22,10 +22,10 @@
 	.row {
 	    margin-right: 0;
 	    margin-left: 0;
-	    @media (max-width: 767px) { 
+	    @media (max-width: 767px) {
 	    	 margin-right: -15px;
 		    margin-left: -15px;
-		 }   
+		 }
 	}
 	.col-sm-12,
 	.col-sm-8,
@@ -33,9 +33,9 @@
 	.col-sm-4 {
 		position: relative;
 		min-height: 1px;
-		padding: 2px;
+		// padding: 2px;
 
-		@media (max-width: 767px) { 
+		@media (max-width: 767px) {
 			min-height: 1px;
 			padding: 0 15px 15px 15px;
 		}
@@ -45,14 +45,14 @@
 	}
 	.productlist-price-container {
 		position: absolute;
-		bottom: 0;
+		top: 10px;
 		right: 0;
 		max-width: 90%;
 		text-align: right;
 		z-index: 89;
 		margin: 22px;
 
-		@media (max-width: 767px) { 
+		@media (max-width: 767px) {
 			margin: 30px;
 		}
 	}
@@ -77,7 +77,7 @@
 		font-weight: bold;
 		font-style: normal;
 		line-height: 1.3em;
-		
+
 		.original-price {
 			text-decoration: line-through;
 			margin-left: .5em;
@@ -95,13 +95,13 @@
 	top: 26px;
 	right: 22px;
 
-	@media (max-width: 767px) { 
+	@media (max-width: 767px) {
 		top: 18px;
 		right: 30px;
-	}	
+	}
 }
 
-.sold-out-label, 
+.sold-out-label,
 .sale-label {
 	color: @brand-primary;
 	font-weight: 400;

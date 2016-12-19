@@ -15,6 +15,7 @@ const success = (data) => {
 
 const showCartSuccess = (user_data) => {
   $('#messages').text('cart success');
+  console.log(user_data);
   content.renderCart(user_data);
   console.log(user_data);
 };

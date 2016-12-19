@@ -7,7 +7,7 @@
 .menu-wrapper {
 	position: relative;
 	font-weight: 300;
-	
+
 	h3 {
 		color: @menu-default-color;
 		margin-left: 20px;
@@ -15,10 +15,10 @@
 		text-transform: uppercase;
 		font-size: 22px;
 	}
-	
+
 	.mt-info {
 		padding-left: 20px;
-		
+
 		h3 {
 			color: @menu-default-color;
 			margin-left: 0;
@@ -39,14 +39,14 @@
 				}
 			}
 		}
-	}		
+	}
 
 	.nav-list {
 
 		@media (max-width: 767px) {
 
 			padding: 0 0 0 15px;
-		
+
 			li {
 				display: list-item;
 				margin: 0;
@@ -85,8 +85,8 @@
 		font-weight: 400;
 		overflow-x: hidden;
 		overflow-y: auto;
-		.translate3d(0, 0, 0); 
-	}		
+		.translate3d(0, 0, 0);
+	}
 }
 
 // menu hover effect
@@ -100,7 +100,7 @@
 		padding: 0 5px;
 		background: transparent;
 		.transition(all .3s ease-out);
-	
+
 		&:hover,
 		&:focus{
 			background-color: @menu-text-color;
@@ -113,7 +113,7 @@
 		color: @menu-default-color;
 		text-decoration: none;
 	}
-}		
+}
 
 
 /* ------------------------------ nav menu -------------------------- */
@@ -128,24 +128,24 @@
 	padding: 0 2em;
 	font-weight: 300;
 	color: @menu-default-color;
-	
+
 	li{
 		text-align: center;
 		display: inline-block;
 		margin: 0 5px;
 		height: auto;
-		
+
 		 a {
 			text-transform: uppercase;
 		}
-	}	
+	}
 	.active a span{
 		background-color: @menu-text-color;
 		color: @menu-default-color;
 	}
 
-}			
-	
+}
+
 
 
 .nav-brand {
@@ -189,7 +189,7 @@
 	margin: 15px 0 45px 0;
 	position: relative;
 	height: 48px;
-	
+
 	h1{
 		margin: 5px 0 0 0;
 	}
@@ -197,7 +197,7 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		
+
 		@media (max-width: 767px) {
 			position: relative;
 		}
@@ -263,7 +263,7 @@ a.nav-icon-outline {
 	bottom: 100%;
 	left: 0;
 	.transition(all 0.3s ease);
-	
+
 	&::before {
 		position: absolute;
 		top: 0;
@@ -287,15 +287,15 @@ a.nav-icon-outline {
 	  transition: opacity 0.4s;
 	  z-index: 100;
 	}
-}	
+}
 
 
 .menu-open{
 	.translate3d(-240px, 0, 0);
-	overflow: hidden; 
+	overflow: hidden;
 }
 .close-menu {
-	
+
 	&:hover {
 		color: @brand-primary;
 		text-decoration: none;
@@ -308,4 +308,4 @@ a.nav-icon-outline {
 		color: @menu-default-color;
 		.transition(all 0.3s ease-out);
 	}
-}	
+}

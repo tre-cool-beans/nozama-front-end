@@ -5,25 +5,30 @@
 </div>
 <hr>
 
-<div class="row">
-
+<div class="container-fluid productlist">
   {{#each this}}
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-      <h1><small>{{title}}</small></h1>
-      <img src="{{image_url}}">
-      <p>${{price}}</p>
+      <h4>{{title}}</h4>
+    <a >
+      <img class="img-responsive" src="{{image_url}}">
+      <span class="productlist-price-container">
+        <span class="product-price">
+          <span class="price">{{price}}</span>
+        </span>
+      </span>
+    </a>
 
-      <form class="purchase">
+      <form class="purchase myform">
         <input type="hidden" name="title" value="{{title}}">
         <input type="hidden" name="description" value="{{description}}">
         <input type="hidden" name="price" value="{{price}}">
         <input type="hidden" name="image_url" value="{{image_url}}">
-        <select name="size">
+        <select class="form-control" name="size">
           {{#each sizes}}
           <option value="{{this}}">{{this}}</option>
           {{/each}}
         </select>
-        <select name="quantity">
+        <select class="form-control" name="quantity">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -35,9 +40,8 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
-      <button type="submit" class="btn btn-default">Add to Cart</button>
-    </form>
+        <button type="submit" class="btn btn-default">Add to Cart</button>
+      </form>
     </div>
   {{/each}}
-
 </div>
