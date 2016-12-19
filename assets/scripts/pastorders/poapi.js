@@ -14,7 +14,7 @@ const indexPastOrders = () =>
 
 const createPastOrder = (data) =>
   $.ajax({
-      url: config.host + '/pastorders/' + store.user._id,
+      url: config.host + '/pastorders',
       method: 'POST',
       data,
       headers: {
