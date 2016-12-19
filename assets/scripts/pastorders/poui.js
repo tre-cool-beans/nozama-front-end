@@ -1,6 +1,5 @@
 'use strict';
 
-// const store = require('../store');
 const content = require('../content-render');
 
 const failure = (error) => {
@@ -19,8 +18,14 @@ const indexPastOrdersSuccess = (past_orders) => {
   console.log(past_orders);
 };
 
+const createPastOrderSuccess = (response_data) => {
+  console.log('This is the response from createPastOrder:');
+  console.log(response_data);
+};
+
 module.exports = {
   failure,
   success,
   indexPastOrdersSuccess,
+  createPastOrderSuccess,
 };
