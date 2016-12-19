@@ -10,11 +10,23 @@
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
     <a>
       <img class="img-responsive" src="{{image_url}}">
-      <span class="productlist-price-container">
+        <span class="productlist-price-container">
+          <span class="product-price product-title">
+            <span>{{title}}</span>
+          </span>
+        </span>
+
+        <span class="productlist-price-container price-container">
+          <span class="product-price">
+            <span class="price">{{price}}</span>
+          </span>
+        </span>
+
+      <!--<span class="productlist-price-container">
           <span>{{title}}</span>
           <br>
           <span class="price">{{price}}</span>
-      </span>
+      </span>-->
     </a>
 
       <form class="hidden purchase myform">
