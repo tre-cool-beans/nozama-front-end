@@ -14,7 +14,7 @@ const success = (data) => {
 
 const indexPastOrdersSuccess = (past_orders) => {
   $('#messages').text('cart success');
-  content.renderPastOrders(past_orders);
+  content.renderPastOrders(past_orders.pastorders);
   console.log(past_orders);
 };
 

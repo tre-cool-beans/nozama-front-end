@@ -9,23 +9,28 @@
   {{#each this}}
     <div class="row">
       <div class="col-sm-8">
-        {{#each product}}
+
+        {{#each cart}}
           <div class="media">
             <div class="media-left">
               <a href="#">
-                <img class="media-object" src="..." alt="...">
+                <img class="media-object" src="{{this.image_url}}" alt="...">
               </a>
             </div>
             <div class="media-body">
-              <h4 class="media-heading">Media heading</h4>
+              <h4 class="media-heading">{{this.title}}</h4>
+              <p>{{this.description}}</p>
             </div>
           </div>
         {{/each}}
+
       </div>
 
       <div class="col-sm-4">
-
+        <p>{{createdAt}}</p>
+        <p>{{total_price}}</p>
       </div>
+
     </div>
   {{/each}}
 </div>
