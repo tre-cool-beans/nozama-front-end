@@ -24,7 +24,7 @@ const onShowCart = function (event) {
 // events that are generated dynamically by handlebars
 
 const addCartProductHandlers = () => {
-  $('.purchase').off('submit');
+  $('.purchase').off();
   $('.purchase').on('submit', onCreateCartProduct );
 };
 
