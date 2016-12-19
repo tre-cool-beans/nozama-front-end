@@ -28,6 +28,6 @@ $(() => {
 
   $('#content').on('show-past-order-change', function(){
     pastOrderEvents.addPastOrderHandlers();
-  };
+  });
 
 });
