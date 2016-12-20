@@ -9,9 +9,9 @@ const indexProducts = () =>
       method: 'GET'
   });
 
-const showProduct = (product) =>
+const showProduct = (productid) =>
   $.ajax({
-      url: config.host + '/products/' + product._id,
+      url: config.host + '/products/' + productid,
       method: 'GET'
   });
 

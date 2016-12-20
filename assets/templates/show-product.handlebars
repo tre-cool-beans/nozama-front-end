@@ -1,0 +1,69 @@
+<div class="container-fluid product">
+  <div class="row visible-xs product-mobile">
+    <div class="col-xs-12 text-center">
+      <h2 class="product-title">Tuscan urns</h2>
+      <div class="product-price">
+        <span class="price">14.00</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 ">
+      <img src="{{image_url}}" class="product-img img-responsive" alt="item">
+    </div>
+    <div class="col-sm-4 ">
+      <h2 class="product-title hidden-xs">{{title}}</h2>
+      <div class="product-price hidden-xs">
+        <span class="price">{{price}}</span>
+      </div>
+      <div class="product-detail">
+        <p>{{description}}</p>
+        <ul>
+          <li>Holds objects, collections of stones or shells, or candles (sold separately) for a striking display.</li>
+          <li>Weighty bases are designed to counterbalance top-heavy stems.</li>
+          <li>Fluid design is finished with a cut rim.</li>
+          <li>Monogramming is available at an additional charge.</li>
+          <li>Monogram will be centered on the side of the bowl.</li>
+          <li>Small: 6.5" diameter, 7" high</li>
+        </ul>
+      </div>
+      <form class="myform">
+        <div class="form-group clearfix">
+          <label class="control-label">Size</label>
+          <select class="form-control" name="size">
+									{{size}}
+									<option value="{{size}}">{{size}}</option>
+								</select>
+        </div>
+
+        <div class="form-group clearfix">
+          <label class="control-label">Size</label>
+          <select class="form-control" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+          </select>
+        </div>
+        <div class="product-btn">
+          <button type="submit" class="btn btn-default">Add to Cart</button></option>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 ">
+      <div class="paging clearfix">
+        <a class="btn btn-outline pull-left" href="product2.html"><i class="icon-arrow-left2 left"></i><span>Previous</span><span class="hidden-xs"> Product</span></a>
+      </div>
+    </div>
+  </div>
+
+</div>
