@@ -21,38 +21,7 @@
             <span class="price">{{price}}</span>
           </span>
         </span>
-
-      <!--<span class="productlist-price-container">
-          <span>{{title}}</span>
-          <br>
-          <span class="price">{{price}}</span>
-      </span>-->
     </a>
-
-      <form class="purchase myform">
-        <input type="hidden" name="title" value="{{title}}">
-        <input type="hidden" name="description" value="{{description}}">
-        <input type="hidden" name="price" value="{{price}}">
-        <input type="hidden" name="image_url" value="{{image_url}}">
-        <select class="form-control" name="size">
-          {{#each sizes}}
-          <option value="{{this}}">{{this}}</option>
-          {{/each}}
-        </select>
-        <select class="form-control" name="quantity">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-        <button type="submit" class="btn btn-default">Add to Cart</button>
-      </form>
     </div>
   {{/each}}
 </div>

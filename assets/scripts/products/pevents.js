@@ -22,6 +22,9 @@ const onShowProduct = function () {
 
 const addHandlers = function () {
   $('#home-button').on('click', onIndexProducts);
+  $('#home-nozama').on('click', onIndexProducts);
+  $('#content').on('click', '#home-crumb', onIndexProducts);
+  $('#content').on('click', '#home-crumb-footer', onIndexProducts);
   $('#content').on('click', '.product-image', onShowProduct);
 
 };
