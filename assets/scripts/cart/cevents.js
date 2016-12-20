@@ -44,6 +44,12 @@ const onDestroyCartProduct = function (event) {
     .catch(cui.failure);
 };
 
+const onCheckout = () => {
+  // This is almost useless indirection, but I don't want
+  // to require content-render in here.
+  cui.checkoutSuccess();
+};
+
 // Following functions are to bind functions to element
 // events that are generated dynamically by handlebars
 
@@ -57,11 +63,11 @@ const addCartProductHandlers = () => {
   // Trigger this when the My Cart template is loaded
   $('.update-cart-button').off();
   $('.destroy-cart-product-button').off();
+  $('#checkout-button').off();
 
   $('.update-cart-button').on('click', onUpdateCartProduct);
   $('.destroy-cart-product-button').on('click', onDestroyCartProduct);
-
-  console.log('CART HANDLERS HAVE BEEN TRIGGERED');
+  $('#checkout-button').on('click', onCheckout);
 };
 
 const addHandlers = () => {

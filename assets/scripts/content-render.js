@@ -6,6 +6,7 @@ const indexProducts = require('../templates/index-products.handlebars');
 const showCart = require('../templates/user-cart.handlebars');
 const indexPastOrders = require('../templates/index-past-orders.handlebars');
 const showProduct = require('../templates/show-product.handlebars');
+const showCheckout = require('../templates/show-checkout.handlebars');
 
 const renderProducts = (products) => {
   $('#content').html(indexProducts(products));
@@ -48,6 +49,15 @@ const renderPastOrders = (past_orders) => {
   $('#content').trigger('show-past-order-change');
 };
 
+const renderCheckout = () => {
+  $('#content').html(showCheckout());
+
+  $('#sub-total').text('$' + store.user.sub_total);
+  $('#shipping').text('$' + store.user.shipping);
+  $('#tax').text('$' + store.user.tax + ' (' + store.user.tax_rate + '%)');
+  $('#total').text('$' + store.user.total);
+};
+
 // const renderWelcomePage = () => {
 //   $('.hide-till-sign-in').hide();
 //   $('#content').html(showWelcomePageTemplate());
@@ -59,4 +69,5 @@ module.exports = {
   renderProduct,
   renderCart,
   renderPastOrders,
+  renderCheckout,
 };

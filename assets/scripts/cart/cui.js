@@ -43,6 +43,10 @@ const destroyCartProductSuccess = (response_data) => {
   content.renderCart(response_data.cart);
 };
 
+const checkoutSuccess = () => {
+  content.renderCheckout();
+};
+
 module.exports = {
   failure,
   success,
@@ -50,4 +54,5 @@ module.exports = {
   createCartProductSuccess,
   updateCartProductSuccess,
   destroyCartProductSuccess,
+  checkoutSuccess,
 };
