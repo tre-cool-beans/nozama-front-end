@@ -4,6 +4,7 @@ const authEvents = require('./auth/events.js');
 const cartEvents = require('./cart/cevents.js');
 const productEvents = require('./products/pevents.js');
 const pastOrderEvents = require('./pastorders/poevents.js');
+const stripeEvents = require('./stripe/sevents.js');
 
 // On document ready
 $(() => {
@@ -26,8 +27,12 @@ $(() => {
     cartEvents.addProductPageHandlers();
   });
 
-  $('#content').on('show-past-order-change', function(){
+  $('#content').on('show-past-order-change', function() {
     pastOrderEvents.addPastOrderHandlers();
+  });
+
+  $('#content').on('show-checkout-change', function() {
+    stripeEvents.addStripeHandlers();
   });
 
 });

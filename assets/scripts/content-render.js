@@ -56,6 +56,8 @@ const renderCheckout = () => {
   $('#shipping').text('$' + store.user.shipping);
   $('#tax').text('$' + store.user.tax + ' (' + store.user.tax_rate + '%)');
   $('#total').text('$' + store.user.total);
+
+  $('#content').trigger('show-checkout-change');
 };
 
 // const renderWelcomePage = () => {
