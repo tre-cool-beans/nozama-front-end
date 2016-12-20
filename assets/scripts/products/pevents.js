@@ -22,7 +22,7 @@ const onShowProduct = function () {
 
 const addHandlers = function () {
   $('#home-button').on('click', onIndexProducts);
-  $('#content').on('click', '.img-responsive', onShowProduct);
+  $('#content').on('click', '.product-image', onShowProduct);
 
 };
 

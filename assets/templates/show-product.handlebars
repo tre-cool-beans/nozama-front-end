@@ -31,8 +31,9 @@
         <div class="form-group clearfix">
           <label class="control-label">Size</label>
           <select class="form-control" name="size">
-									{{size}}
-									<option value="{{size}}">{{size}}</option>
+									{{#each sizes}}
+                		<option value="{{this}}">{{this}}</option>
+                  {{/each}}
 								</select>
         </div>
 
