@@ -13,7 +13,7 @@ const success = (data) => {
   console.log(data);
 };
 
-const showCartSuccess = (user_data) => {
+const indexCartProductsSuccess = (user_data) => {
   $('#messages').text('cart success');
   console.log(user_data);
   content.renderCart(user_data);
@@ -32,6 +32,6 @@ const createCartProductSuccess = (response_data) => {
 module.exports = {
   failure,
   success,
-  showCartSuccess,
+  indexCartProductsSuccess,
   createCartProductSuccess,
 };

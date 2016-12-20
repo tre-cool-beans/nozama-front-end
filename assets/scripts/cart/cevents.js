@@ -13,10 +13,10 @@ const onCreateCartProduct = function (event) {
     .catch(cui.failure);
 };
 
-const onShowCart = function (event) {
+const onIndexCartProducts = function (event) {
   event.preventDefault();
-  capi.showCart()
-    .then(cui.showCartSuccess)
+  capi.indexCartProducts()
+    .then(cui.indexCartProductsSuccess)
     .catch(cui.failure);
 };
 
@@ -34,7 +34,7 @@ const addCartHandlers = () => {
 };
 
 const addHandlers = () => {
-  $('#cart-button').on('click', onShowCart);
+  $('#cart-button').on('click', onIndexCartProducts);
 };
 
 module.exports = {

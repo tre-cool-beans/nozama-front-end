@@ -9,7 +9,7 @@ const indexProducts = () =>
       method: 'GET'
   });
 
-const showCart = () =>
+const indexCartProducts = () =>
   $.ajax({
       url: config.host + '/users/' + store.user._id,
       method: 'GET',
@@ -30,6 +30,6 @@ const createCartProduct = (data) =>
 
 module.exports = {
   indexProducts,
-  showCart,
+  indexCartProducts,
   createCartProduct,
 };
