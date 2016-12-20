@@ -23,11 +23,21 @@ const onCreateCartProduct = function (event) {
 const onUpdateCartProduct = function (event) {
   event.preventDefault();
 
-  // figure out how to get _id, quantity, and size into data
-  let data = getFormFields(this);
-  data._id = "JQUERY SELECT THE DATA-ID OF THE CART ITEM BEING DELETED";
-  console.log("this is updated cart product", data);
+  let product_id = $(this).data().id;
 
+  let data = {
+    _id: product_id,
+    size: $('#' + product_id + '-size').val(),
+    quantity: $('#' + product_id + '-quantity').val(),
+  };
+
+  if (!data.size) { delete data.size };
+  if (!data.quantity) { delete data.quantity };
+
+  console.log('THIS BE UPDATA');
+  console.log(data);
+
+  // figure out how to get _id, quantity, and size into data
   capi.updateCartProduct(data)
     .then(cui.updateCartProductSuccess)
     .catch(cui.failure);
