@@ -6,6 +6,7 @@ const sapi = require('./sapi');
 const sui = require('./sui');
 
 const poevents = require('../pastorders/poevents');
+const cevents = require('../cart/cevents');
 
 const onChargeCard = function(data) {
   let req_data = {
@@ -37,6 +38,7 @@ const onCreateToken = function(event) {
       sui.chargeCardSuccess(response_data);
       return poevents.onCreatePastOrder();
     })
+    .then(cevents.onEmptyCart)
     .then(setTimeout(poevents.onIndexPastOrders, 2000))
     .catch(sui.failure);
 };

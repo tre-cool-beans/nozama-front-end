@@ -48,7 +48,6 @@ const destroyCartProductSuccess = (response_data) => {
 const emptyCartSuccess = (response_data) => {
   store.user.cart = response_data.cart;
   $('#messages').text('Emptied Cart');
-  content.renderCart(response_data.cart);
 };
 
 const checkoutSuccess = () => {
