@@ -11,8 +11,17 @@ const onIndexProducts = function () {
     .catch(pui.indexProductsFailure);
 };
 
+const onShowProduct = function () {
+  console.log('made it to onShowProduct');
+  papi.showProduct()
+    .then(pui.showProductSuccess)
+    .catch(pui.showProductFailure);
+};
+
 const addHandlers = function () {
   $('#home-button').on('click', onIndexProducts);
+  $('#content').on('click', '.img-responsive', onShowProduct);
+
 };
 
 module.exports = {

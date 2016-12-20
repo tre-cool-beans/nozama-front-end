@@ -19,7 +19,16 @@ const indexProductsSuccess = (response_data) => {
   content.renderProducts(response_data.products);
 };
 
+const showProductSuccess = (response_data) => {
+  console.log(response_data);
+  content.renderProduct(response_data.product);
+};
+
 const indexProductsFailure = (response_data) => {
+  $('#content').text('MAN GETTING THOSE PRODUCTS FAILED SO HARD OH MAN OH MAN OH MAN OH MAN OH MAAAAAAAAAAAAAAN');
+};
+
+const showProductFailure = (response_data) => {
   $('#content').text('MAN GETTING THOSE PRODUCTS FAILED SO HARD OH MAN OH MAN OH MAN OH MAN OH MAAAAAAAAAAAAAAN');
 };
 
@@ -28,4 +37,6 @@ module.exports = {
   failure,
   indexProductsSuccess,
   indexProductsFailure,
+  showProductSuccess,
+  showProductFailure,
 };

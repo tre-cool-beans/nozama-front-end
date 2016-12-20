@@ -9,6 +9,14 @@ const indexProducts = () =>
       method: 'GET'
   });
 
+const showProduct = (product) =>
+  $.ajax({
+      url: config.host + '/products/' + product._id,
+      method: 'GET'
+  });
+
+
 module.exports = {
   indexProducts,
+  showProduct,
 };
