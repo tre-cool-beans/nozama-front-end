@@ -9,8 +9,7 @@ const failure = (error) => {
 };
 
 const createTokenSuccess = (response_data) => {
-  console.log('Successfully created token! Response: ');
-  console.log(response_data);
+  console.log('Successfully created token!');
 };
 
 module.exports = {

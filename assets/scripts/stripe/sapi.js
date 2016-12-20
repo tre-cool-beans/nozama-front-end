@@ -1,7 +1,7 @@
 'use strict';
 
-// const config = require('../config');
-// const store = require('../store');
+const config = require('../config');
+const store = require('../store');
 
 const createToken = ($payment_form) =>
   new Promise((resolve, reject) => {
@@ -14,6 +14,17 @@ const createToken = ($payment_form) =>
     });
   });
 
+const chargeCard = (data) =>
+  $.ajax({
+    url: config.host + '/stripe',
+    method: 'POST',
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+
 module.exports = {
   createToken,
+  chargeCard,
 };
