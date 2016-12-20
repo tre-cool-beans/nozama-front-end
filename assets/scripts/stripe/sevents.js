@@ -37,7 +37,7 @@ const onCreateToken = function(event) {
       sui.chargeCardSuccess(response_data);
       return poevents.onCreatePastOrder();
     })
-    .then(poevents.onIndexPastOrders)
+    .then(setTimeout(poevents.onIndexPastOrders, 2000))
     .catch(sui.failure);
 };
 
