@@ -5,18 +5,18 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const capi = require('./capi');
 const cui = require('./cui');
 
+const onIndexCartProducts = function (event) {
+  event.preventDefault();
+  capi.indexCartProducts()
+  .then(cui.indexCartProductsSuccess)
+  .catch(cui.failure);
+};
+
 const onCreateCartProduct = function (event) {
   event.preventDefault();
   let cart_product = getFormFields(this);
   capi.createCartProduct(cart_product)
     .then(cui.createCartProductSuccess)
-    .catch(cui.failure);
-};
-
-const onIndexCartProducts = function (event) {
-  event.preventDefault();
-  capi.indexCartProducts()
-    .then(cui.indexCartProductsSuccess)
     .catch(cui.failure);
 };
 
@@ -36,7 +36,7 @@ const onDestroyCartProduct = function (event) {
   event.preventDefault();
 
   let data = {
-    _id: "JQUERY SELECT THE DATA-ID OF THE CART ITEM BEING DELETED"
+    _id: $(this).data().id
   };
 
   capi.destroyCartProduct(data)

@@ -7,36 +7,35 @@
 
 <div class="row">
   <div class="col-sm-7 cart-contents">
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Unit Cost</th>
-          <th class="text-center">Quantity</th>
-          <th class="text-right">Total</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each this}}
-          <tr>
-            <td class="vert-align">{{title}}</td>
-            <td class="vert-align">{{price}}</td>
-            <td class="text-center vert-align">{{quantity}}</td>
-            <td class="text-right vert-align">{{price}}{{quantity}}</td>
-            <td class="text-center vert-align"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
-          </tr>
-          {{else}}
-            <tr>
-              <td colspan="5">
-                <h2 class="text-center">Your cart is empty.</h2>
-              </td>
-            </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
+<table class="table">
+						  <thead>
+							<tr>
+							  <th>Item</th>
+							  <th>Unit Cost</th>
+							  <th class="text-center">Quantity</th>
+							  <th class="text-right">Total</th>
+							  <th></th>
+							</tr>
+						  </thead>
+						  <tbody>
+								{{#each this}}
+							<tr>
+	  	 					<td class="vert-align">{{title}}</td>
+								<td class="vert-align">{{price}}</td>
+								<td class="text-center vert-align">{{quantity}}</td>
+								<td class="text-right vert-align">{{price}}{{quantity}}</td>
+								<td class="text-center vert-align destroy-cart-product-button" data-id="{{_id}}"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
+							</tr>
+							{{else}}
+							<tr>
+								<td colspan="5">
+									<h2 class="text-center">Your cart is empty.</h2>
+								</td>
+							</tr>
+								{{/each}}
+						  </tbody>
+						</table>
+					</div>
 
   <div class="col-sm-3">
     <table class="table">
@@ -71,5 +70,4 @@
 
     <a id="checkout-button" class="btn btn-right checkout-button">Checkout</a>
   </div>
-</div>
 </div>
