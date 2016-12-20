@@ -20,16 +20,28 @@ const onIndexCartProducts = function (event) {
     .catch(cui.failure);
 };
 
+const onUpdateCartProduct = function (event) {
+  event.preventDefault();
+  capi.updateCartProduct()
+    .then(cui.updateCartProductSuccess)
+    .catch(cui.failure);
+};
+
 // Following functions are to bind functions to element
 // events that are generated dynamically by handlebars
 
-const addCartProductHandlers = () => {
+const addProductPageHandlers = () => {
   $('.purchase').off();
-  $('.purchase').on('submit', onCreateCartProduct );
+
+  $('.purchase').on('submit', onCreateCartProduct);
 };
 
-const addCartHandlers = () => {
+const addCartProductHandlers = () => {
   // Trigger this when the My Cart template is loaded
+  $('.update-cart-button').off();
+
+  $('.update-cart-button').on('click', onUpdateCartProduct);
+
   console.log('CART HANDLERS HAVE BEEN TRIGGERED');
 };
 
@@ -38,7 +50,7 @@ const addHandlers = () => {
 };
 
 module.exports = {
+  addProductPageHandlers,
   addCartProductHandlers,
-  addCartHandlers,
   addHandlers,
 };
