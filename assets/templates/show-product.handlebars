@@ -27,8 +27,12 @@
           <li>Small: 6.5" diameter, 7" high</li>
         </ul>
       </div>
-      <form class="myform">
+      <form class="purchase myform">
         <div class="form-group clearfix">
+          <input type="hidden" name="title" value="{{title}}">
+          <input type="hidden" name="description" value="{{description}}">
+          <input type="hidden" name="price" value="{{price}}">
+          <input type="hidden" name="image_url" value="{{image_url}}">
           <label class="control-label">Size</label>
           <select class="form-control" name="size">
 									{{#each sizes}}

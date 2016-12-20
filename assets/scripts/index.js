@@ -33,6 +33,10 @@ $(() => {
     cartEvents.addProductPageHandlers();
   });
 
+  $('#content').on('show-one-product-change', function() {
+    cartEvents.addProductPageHandlers();
+  });
+
   $('#content').on('show-past-order-change', function() {
     pastOrderEvents.addPastOrderHandlers();
   });
