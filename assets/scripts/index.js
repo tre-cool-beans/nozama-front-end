@@ -3,8 +3,8 @@
 const authEvents = require('./auth/events.js');
 const cartEvents = require('./cart/cevents.js');
 const productEvents = require('./products/pevents.js');
-const pastOrderEvents = require('./pastorders/poevents.js');
 const stripeEvents = require('./stripe/sevents.js');
+const pastOrderEvents = require('./pastorders/poevents.js');
 // const helpers = require('handlebars-helpers')();
 // const math = helpers.math();
 //

@@ -8,27 +8,23 @@ const poapi = require('./poapi');
 const poui = require('./poui');
 
 const onIndexPastOrders = function (event) {
-  event.preventDefault();
+  if (event) {
+    event.preventDefault();
+  }
   poapi.indexPastOrders()
     .then(poui.indexPastOrdersSuccess)
     .catch(poui.failure);
 };
 
-const onCreatePastOrder = function(event) {
-  event.preventDefault();
+const onCreatePastOrder = function() {
   let data = {
     pastorder: {
-      comment: "This is just a TEST of onCreatePastOrder!",
+      comment: "",
       cart: store.user.cart,
-      total_price: 0
+      total_price: store.user.total,
     }
   };
 
-  // Copy this code out to create total_price key
-  for (let i = 0; i < store.user.cart.length; i++) {
-    data.pastorder.total_price += store.user.cart[i].price;
-  }
-  // Copy ^ that code out to create total_price key
   console.log("THIS IS PAST ORDER SENDING DATA: ");
   console.log(data);
   poapi.createPastOrder(data)
@@ -54,5 +50,7 @@ const addHandlers = () => {
 
 module.exports = {
   addPastOrderHandlers,
+  onCreatePastOrder,
+  onIndexPastOrders,
   addHandlers,
 };

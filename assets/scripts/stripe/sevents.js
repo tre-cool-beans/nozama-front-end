@@ -5,6 +5,8 @@ const store = require('../store');
 const sapi = require('./sapi');
 const sui = require('./sui');
 
+const poevents = require('../pastorders/poevents');
+
 const onChargeCard = function(data) {
   let req_data = {
     token: data.id,
@@ -21,6 +23,8 @@ const onCreateToken = function(event) {
   let $payment_form = $('#payment-form');
   // Disable the submit button to prevent repeated clicks:
   $payment_form.find('.submit-payment').prop('disabled', true);
+  // Re-enable the button after 3 seconds in case user needs to re-submit.
+  setTimeout(() => $payment_form.find('.submit-payment').prop('disabled', false), 2000);
   // We are sending the whole form as getFormFields will not
   // work on this because the Stripe form fields have no name
   // and should not ever have a name.
@@ -29,6 +33,11 @@ const onCreateToken = function(event) {
       sui.createTokenSuccess(response_data);
       return onChargeCard(response_data);
     })
+    .then((response_data) => {
+      sui.chargeCardSuccess(response_data);
+      return poevents.onCreatePastOrder();
+    })
+    .then(poevents.onIndexPastOrders)
     .catch(sui.failure);
 };
 
