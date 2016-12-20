@@ -5,10 +5,16 @@
 const indexProducts = require('../templates/index-products.handlebars');
 const showCart = require('../templates/user-cart.handlebars');
 const indexPastOrders = require('../templates/index-past-orders.handlebars');
+const showProduct = require('../templates/show-product.handlebars');
 
 const renderProducts = (products) => {
   $('#content').html(indexProducts(products));
   $('#content').trigger('show-product-change');
+};
+
+const renderProduct = (product) => {
+  $('#content').html(showProduct(product));
+  $('#content').trigger('show-one-product-change');
 };
 
 const renderCart = (user_data) => {
@@ -32,6 +38,7 @@ const renderPastOrders = (past_orders) => {
 
 module.exports = {
   renderProducts,
+  renderProduct,
   renderCart,
   renderPastOrders,
 };
