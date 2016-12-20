@@ -3,10 +3,14 @@
 const config = require('../config');
 const store = require('../store');
 
-const indexProducts = () =>
+const createCartProduct = (data) =>
   $.ajax({
-      url: config.host + '/products',
-      method: 'GET'
+    url: config.host + '/cart/' + store.user._id,
+    method: 'POST',
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
   });
 
 const indexCartProducts = () =>
@@ -18,15 +22,6 @@ const indexCartProducts = () =>
       },
   });
 
-const createCartProduct = (data) =>
-  $.ajax({
-      url: config.host + '/cart/' + store.user._id,
-      method: 'POST',
-      data,
-      headers: {
-        Authorization: 'Token token=' + store.user.token,
-      },
-  });
 
 const updateCartProduct = (data) =>
   $.ajax({
@@ -38,9 +33,19 @@ const updateCartProduct = (data) =>
       },
   });
 
+const destroyCartProduct = (data) =>
+  $.ajax({
+      url: config.host + '/cart/' + store.user._id,
+      method: 'DELETE',
+      data,
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
+  });
+
 module.exports = {
-  indexProducts,
   indexCartProducts,
   createCartProduct,
   updateCartProduct,
+  destroyCartProduct,
 };

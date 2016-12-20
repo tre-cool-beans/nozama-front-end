@@ -37,10 +37,17 @@ const updateCartProductSuccess = (response_data) => {
   content.renderCart(response_data);
 };
 
+const destroyCartProductSuccess = (response_data) => {
+  store.user.cart = response_data.cart;
+  $('#messages').text('ADDED TO CART SUCCESSFULLY!');
+  content.renderCart(response_data);
+};
+
 module.exports = {
   failure,
   success,
   indexCartProductsSuccess,
   createCartProductSuccess,
   updateCartProductSuccess,
+  destroyCartProductSuccess,
 };

@@ -22,8 +22,25 @@ const onIndexCartProducts = function (event) {
 
 const onUpdateCartProduct = function (event) {
   event.preventDefault();
-  capi.updateCartProduct()
+
+  // figure out how to get _id, quantity, and size into data
+  let data = getFormFields(this);
+  data._id = "JQUERY SELECT THE DATA-ID OF THE CART ITEM BEING DELETED";
+
+  capi.updateCartProduct(data)
     .then(cui.updateCartProductSuccess)
+    .catch(cui.failure);
+};
+
+const onDestroyCartProduct = function (event) {
+  event.preventDefault();
+
+  let data = {
+    _id: "JQUERY SELECT THE DATA-ID OF THE CART ITEM BEING DELETED"
+  };
+
+  capi.destroyCartProduct(data)
+    .then(cui.destroyCartProductSuccess)
     .catch(cui.failure);
 };
 
@@ -39,8 +56,10 @@ const addProductPageHandlers = () => {
 const addCartProductHandlers = () => {
   // Trigger this when the My Cart template is loaded
   $('.update-cart-button').off();
+  $('.destroy-cart-product-button').off();
 
   $('.update-cart-button').on('click', onUpdateCartProduct);
+  $('.destroy-cart-product-button').on('click', onDestroyCartProduct);
 
   console.log('CART HANDLERS HAVE BEEN TRIGGERED');
 };
