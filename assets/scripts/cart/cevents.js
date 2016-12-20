@@ -5,7 +5,9 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const capi = require('./capi');
 const cui = require('./cui');
 
+
 const onIndexCartProducts = function (event) {
+
   event.preventDefault();
   capi.indexCartProducts()
   .then(cui.indexCartProductsSuccess)
@@ -31,8 +33,8 @@ const onUpdateCartProduct = function (event) {
     quantity: $('#' + product_id + '-quantity').val(),
   };
 
-  if (!data.size) { delete data.size };
-  if (!data.quantity) { delete data.quantity };
+  if (!data.size) {delete data.size};
+  if (!data.quantity) {delete data.quantity};
 
   console.log('THIS BE UPDATA');
   console.log(data);

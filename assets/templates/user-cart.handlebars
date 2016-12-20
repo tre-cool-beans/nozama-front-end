@@ -26,7 +26,7 @@
             <form class="cart-form">
               <input type="hidden" name="_id" value="{{_id}}">
               <td class="vert-align">{{title}}</td>
-              <td class="vert-align">{{price}}</td>
+              <td class="vert-align">${{price}}</td>
               <td class="text-center vert-align">
                 <select class="form-control cart-dropdown" value="{{quantity}}" name="cart-quantity" id="{{_id}}-quantity">
                   <option value="{{quantity}}" selected disabled>{{quantity}}</option>
@@ -55,7 +55,7 @@
               <td class="text-center vert-align">
                 <button type="button" class="btn btn-default update-cart-button" data-id="{{_id}}">Update</button>
               </td>
-              <td class="text-right vert-align">{{price}}{{quantity}}</td>
+              <td class="text-right vert-align">${{price}}</td>
               <td class="text-center vert-align destroy-cart-product-button" data-id="{{_id}}"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
             </form>
 

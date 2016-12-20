@@ -38,10 +38,10 @@ const renderCart = (cart_data) => {
   store.user.tax = Math.round((store.user.sub_total * store.user.tax_rate) * 100) / 100;
   store.user.total = store.user.sub_total + store.user.tax + store.user.shipping;
 
-  $('#sub-total').text('$' + store.user.sub_total);
-  $('#shipping').text('$' + store.user.shipping);
-  $('#tax').text('$' + store.user.tax + ' (' + store.user.tax_rate + '%)');
-  $('#total').text('$' + store.user.total);
+  $('#sub-total').text('$' + store.user.sub_total.toFixed(2));
+  $('#shipping').text('$' + store.user.shipping.toFixed(2));
+  $('#tax').text('$' + store.user.tax.toFixed(2) + ' (' + store.user.tax_rate + '%)');
+  $('#total').text('$' + store.user.total.toFixed(2));
 };
 
 const renderPastOrders = (past_orders) => {
