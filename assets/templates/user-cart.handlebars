@@ -22,13 +22,14 @@
       <tbody>
         {{#each this}}
           <tr>
-            <form>
-              <input type="hidden" name="_id" data-id="{{_id}}">
+
+            <form class="cart-form">
+              <input type="hidden" name="_id" value="{{_id}}">
               <td class="vert-align">{{title}}</td>
               <td class="vert-align">{{price}}</td>
               <td class="text-center vert-align">
-                <select class="form-control cart-dropdown" value="{{quantity}}" name="cart-quantity">
-                  <option value="{{quantity}}">{{quantity}}</option>
+                <select class="form-control cart-dropdown" value="{{quantity}}" name="cart-quantity" id="{{_id}}-quantity">
+                  <option value="{{quantity}}" selected disabled>{{quantity}}</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -42,7 +43,7 @@
                 </select>
               </td>
               <td class="text-center vert-align">
-                <select class="form-control cart-dropdown" value="{{size}}" name="size">
+                <select class="form-control cart-dropdown" value="{{size}}" name="size" id="{{_id}}-size">
                   <option value="{{size}}">{{size}}</option>
                   <option value="XXS">XXS</option>
                   <option value="XS">XS</option>
@@ -52,11 +53,12 @@
                 </select>
               </td>
               <td class="text-center vert-align">
-                <button type="submit" class="btn btn-default update-button">Update</button>
+                <button type="button" class="btn btn-default update-cart-button" data-id="{{_id}}">Update</button>
               </td>
               <td class="text-right vert-align">{{price}}{{quantity}}</td>
               <td class="text-center vert-align destroy-cart-product-button" data-id="{{_id}}"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
             </form>
+
           </tr>
           {{else}}
             <tr>
