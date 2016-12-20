@@ -28,15 +28,15 @@ const renderCart = (cart_data) => {
 
   store.user.sub_total = 0;
   store.user.shipping = store.user.cart.length === 0 ? 0 : 10;
-  store.user.tax_rate = 0.06;
+  store.user.tax_rate = 6;
 
-  // Copy this code out to create total_price key
+  // Copy this code out to create total key
   for (let i = 0; i < store.user.cart.length; i++) {
-    store.user.sub_total += store.user.cart[i].price;
+    store.user.sub_total += store.user.cart[i].line_price;
   }
-  // Copy ^ that code out to create total_price key
+  // Copy ^ that code out to create total key
 
-  store.user.tax = Math.round((store.user.sub_total * store.user.tax_rate) * 100) / 100;
+  store.user.tax = Math.round((store.user.sub_total * (store.user.tax_rate * 0.01)) * 100) / 100;
   store.user.total = store.user.sub_total + store.user.tax + store.user.shipping;
 
   $('#sub-total').text('$' + store.user.sub_total.toFixed(2));

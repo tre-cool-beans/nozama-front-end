@@ -19,6 +19,7 @@ const indexCartProductsSuccess = (user_data) => {
   $('#messages').text('cart success');
   console.log("User cart data: ");
   console.log(user_data.user.cart);
+  store.user.cart = user_data.user.cart;
   content.renderCart(user_data.user.cart);
 };
 
