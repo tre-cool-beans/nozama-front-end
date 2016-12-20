@@ -28,8 +28,19 @@ const createCartProduct = (data) =>
       },
   });
 
+const updateCartProduct = (data) =>
+  $.ajax({
+      url: config.host + '/cart/' + store.user._id,
+      method: 'PATCH',
+      data,
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
+  });
+
 module.exports = {
   indexProducts,
   indexCartProducts,
   createCartProduct,
+  updateCartProduct,
 };

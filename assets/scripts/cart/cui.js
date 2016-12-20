@@ -13,6 +13,8 @@ const success = (data) => {
   console.log(data);
 };
 
+// All cart success functions can almost definitely be merged into one; not doing that yet just in case. -JOAUFI
+
 const indexCartProductsSuccess = (user_data) => {
   $('#messages').text('cart success');
   console.log(user_data);
@@ -29,9 +31,16 @@ const createCartProductSuccess = (response_data) => {
   store.user.cart = response_data.cart;
 };
 
+const updateCartProductSuccess = (response_data) => {
+  store.user.cart = response_data.cart;
+  $('#messages').text('ADDED TO CART SUCCESSFULLY!');
+  content.renderCart(response_data);
+};
+
 module.exports = {
   failure,
   success,
   indexCartProductsSuccess,
   createCartProductSuccess,
+  updateCartProductSuccess,
 };
