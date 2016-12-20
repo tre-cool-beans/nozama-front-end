@@ -4,69 +4,72 @@
   Not a message.
 </div>
 <hr>
-<div class="col-sm-8">
 
-<table class="table">
-						  <thead>
-							<tr>
-							  <th>Item</th>
-							  <th>Unit Cost</th>
-							  <th class="text-center">Quantity</th>
-							  <th class="text-right">Total</th>
-							  <th></th>
-							</tr>
-						  </thead>
-						  <tbody>
-								{{#each this}}
-							<tr>
-	  	 					<td class="vert-align">{{title}}</td>
-								<td class="vert-align">{{price}}</td>
-								<td class="text-center vert-align">{{quantity}}</td>
-								<td class="text-right vert-align">{{price}}{{quantity}}</td>
-								<td class="text-center vert-align"><i  class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
-							</tr>
-							{{else}}
-							<tr>
-								<td colspan="5">
-									<h2 class="text-center">Your cart is empty.</h2>
-								</td>
-							</tr>
-								{{/each}}
-						  </tbody>
-						</table>
-					</div>
+<div class="row">
+  <div class="col-sm-7 cart-contents">
 
-						<div class="col-sm-4 "  ng-if="total() > 0">
-							<table class="table">
-							  <thead>
-								<tr>
-								  <th colspan="3" class="text-center">Order sumary</th>
-								</tr>
-							  </thead>
-							  <tbody>
-								<tr>
-								  <td>Sub total:</td>
-								  <td></td>
-								  <td class="text-right"><b></b></td>
-								</tr>
-								<tr>
-								  <td>Shipping cost:</td>
-								  <td></td>
-								  <td class="text-right"></td>
-								</tr>
-								<tr>
-								  <td>Tax:</td>
-								  <td></td>
-								  <td class="text-right"></td>
-								</tr>
-								<tr>
-								  <td>Total:</td>
-								  <td></td>
-								  <td id="total" class="text-right"></td>
-								</tr>
-							  </tbody>
-							</table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Unit Cost</th>
+          <th class="text-center">Quantity</th>
+          <th class="text-right">Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each this}}
+          <tr>
+            <td class="vert-align">{{title}}</td>
+            <td class="vert-align">{{price}}</td>
+            <td class="text-center vert-align">{{quantity}}</td>
+            <td class="text-right vert-align">{{price}}{{quantity}}</td>
+            <td class="text-center vert-align"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
+          </tr>
+          {{else}}
+            <tr>
+              <td colspan="5">
+                <h2 class="text-center">Your cart is empty.</h2>
+              </td>
+            </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 
-							<a id="checkout-button" class="btn btn-right checkout-button">Checkout</a>
-					</div>
-				</div>
+  <div class="col-sm-3">
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="3" class="text-center">Order sumary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sub total:</td>
+          <td></td>
+          <td class="text-right"><b></b></td>
+        </tr>
+        <tr>
+          <td>Shipping cost:</td>
+          <td></td>
+          <td class="text-right"></td>
+        </tr>
+        <tr>
+          <td>Tax:</td>
+          <td></td>
+          <td class="text-right"></td>
+        </tr>
+        <tr>
+          <td>Total:</td>
+          <td></td>
+          <td id="total" class="text-right"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a id="checkout-button" class="btn btn-right checkout-button">Checkout</a>
+  </div>
+</div>
+</div>
