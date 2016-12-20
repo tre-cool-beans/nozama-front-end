@@ -27,6 +27,7 @@ const indexCartProductsSuccess = (user_data) => {
 const createCartProductSuccess = (response_data) => {
   store.user.cart = response_data.cart;
   $('#messages').text('ADDED TO CART SUCCESSFULLY!');
+
   // Update user cart data stored locally by setting
   // the response cart to the store user cart
 };

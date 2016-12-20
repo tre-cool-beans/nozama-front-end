@@ -8,6 +8,13 @@ const success = (data) => {
   console.log(data);
 };
 
+const changePasswordSuccess = (data) => {
+  $('#messages').text('success');
+  // $('.hidden').hide();
+  // $('.hidden').show();
+  console.log(data);
+};
+
 const signInSuccess = (data) => {
   store.user = data.user;
   $('.nav-list > li').toggleClass('hidden');
@@ -31,6 +38,7 @@ const failure = (error) => {
 module.exports = {
   failure,
   success,
+  changePasswordSuccess,
   signInSuccess,
   signOutSuccess,
 };
