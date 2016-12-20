@@ -5,12 +5,15 @@
 </div>
 <hr>
 
-<div class="col-md-12">
+<div class="container">
   {{#each this}}
-    <div class="row">
-      <div class="col-sm-8">
+  <div class="row-0">
+    <div class="col-xs-12">
+      <p> Ordered on: {{createdAt}}</p>
+    </div>
 
         {{#each cart}}
+        <div class="col-0-0">
           <div class="media">
             <div class="media-left">
               <a href="#">
@@ -22,13 +25,24 @@
               <p>{{this.description}}</p>
             </div>
           </div>
+        </div>
+
+          <div class="col-0-1">
+            <p>{{this.price}}</p>
+          </div>
         {{/each}}
 
+
+
+
+      <div class="col-0-0">
+        <p> Total:</p>
       </div>
 
-      <div class="col-sm-4">
-        <p>{{createdAt}}</p>
-        <p>{{total_price}}</p>
+      <div class="col-0-1">
+         <p>{{total_price}}</p>
+      </div>
+
       </div>
 
     </div>
