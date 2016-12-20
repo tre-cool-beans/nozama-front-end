@@ -9,7 +9,11 @@ const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.signUp(data)
-    .then(ui.success)
+    .then((response_data) => {
+      ui.success(response_data);
+      return api.signIn(data);
+    })
+    .then(ui.signInSuccess)
     .catch(ui.failure);
 };
 
