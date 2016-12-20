@@ -32,8 +32,8 @@ const onUpdateCartProduct = function (event) {
     quantity: $('#' + product_id + '-quantity').val(),
   };
 
-  if (!data.size) {delete data.size};
-  if (!data.quantity) {delete data.quantity};
+  if (!data.size) { delete data.size; }
+  if (!data.quantity) { delete data.quantity; }
 
   console.log('THIS BE UPDATA');
   console.log(data);
@@ -95,5 +95,6 @@ const addHandlers = () => {
 module.exports = {
   addProductPageHandlers,
   addCartProductHandlers,
+  onEmptyCart,
   addHandlers,
 };
