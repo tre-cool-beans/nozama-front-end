@@ -29,7 +29,7 @@ const onChangePassword = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.changePassword(data)
-    .then(ui.success)
+    .then(ui.changePasswordSuccess)
     .catch(ui.failure);
 };
 
