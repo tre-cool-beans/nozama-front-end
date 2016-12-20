@@ -7,35 +7,35 @@
 
 <div class="row">
   <div class="col-sm-7 cart-contents">
-<table class="table">
-						  <thead>
-							<tr>
-							  <th>Item</th>
-							  <th>Unit Cost</th>
-							  <th class="text-center">Quantity</th>
-							  <th class="text-right">Total</th>
-							  <th></th>
-							</tr>
-						  </thead>
-						  <tbody>
-								{{#each this}}
-							<tr>
-	  	 					<td class="vert-align">{{title}}</td>
-								<td class="vert-align">{{price}}</td>
-								<td class="text-center vert-align">{{quantity}}</td>
-								<td class="text-right vert-align">{{price}}{{quantity}}</td>
-								<td class="text-center vert-align destroy-cart-product-button" data-id="{{_id}}"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
-							</tr>
-							{{else}}
-							<tr>
-								<td colspan="5">
-									<h2 class="text-center">Your cart is empty.</h2>
-								</td>
-							</tr>
-								{{/each}}
-						  </tbody>
-						</table>
-					</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Unit Cost</th>
+          <th class="text-center">Quantity</th>
+          <th class="text-right">Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each this}}
+          <tr>
+            <td class="vert-align">{{title}}</td>
+            <td class="vert-align">{{price}}</td>
+            <td class="text-center vert-align">{{quantity}}</td>
+            <td class="text-right vert-align">{{price}}{{quantity}}</td>
+            <td class="text-center vert-align destroy-cart-product-button" data-id="{{_id}}"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
+          </tr>
+          {{else}}
+            <tr>
+              <td colspan="5">
+                <h2 class="text-center">Your cart is empty.</h2>
+              </td>
+            </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 
   <div class="col-sm-3">
     <table class="table">
@@ -47,23 +47,23 @@
       <tbody>
         <tr>
           <td>Sub total:</td>
-          <td></td>
+          <td id="sub-total"></td>
           <td class="text-right"><b></b></td>
         </tr>
         <tr>
-          <td>Shipping cost:</td>
-          <td></td>
+          <td>Shipping:</td>
+          <td id="shipping"></td>
           <td class="text-right"></td>
         </tr>
         <tr>
           <td>Tax:</td>
-          <td></td>
+          <td id="tax"></td>
           <td class="text-right"></td>
         </tr>
         <tr>
           <td>Total:</td>
-          <td></td>
-          <td id="total" class="text-right"></td>
+          <td id="total"></td>
+          <td class="text-right"></td>
         </tr>
       </tbody>
     </table>

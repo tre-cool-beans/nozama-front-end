@@ -1,6 +1,6 @@
 'use strict';
 
-// const store = require('./store');
+const store = require('./store');
 
 const indexProducts = require('../templates/index-products.handlebars');
 const showCart = require('../templates/user-cart.handlebars');
@@ -20,6 +20,27 @@ const renderProduct = (product) => {
 const renderCart = (cart_data) => {
   $('#content').html(showCart(cart_data));
   $('#content').trigger('show-cart-change');
+
+  // All this code should PROBABLY BE REFACTORED
+  // and PUT SOMEWHERE ELSE; maybe store? It's just
+  // ugly here.
+
+  store.user.sub_total = 0;
+  store.user.shipping = 10;
+  store.user.tax_rate = 0.06;
+  // Copy this code out to create total_price key
+  for (let i = 0; i < store.user.cart.length; i++) {
+    store.user.sub_total += store.user.cart[i].price;
+  }
+  // Copy ^ that code out to create total_price key
+
+  store.user.tax = Math.round((store.user.sub_total * store.user.tax_rate) * 100) / 100;
+  store.user.total = store.user.sub_total + store.user.tax + store.user.shipping;
+
+  $('#sub-total').text('$' + store.user.sub_total);
+  $('#shipping').text('$' + store.user.shipping);
+  $('#tax').text('$' + store.user.tax + ' (' + store.user.tax_rate + '%)');
+  $('#total').text('$' + store.user.total);
 };
 
 const renderPastOrders = (past_orders) => {
