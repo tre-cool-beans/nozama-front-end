@@ -26,6 +26,7 @@ const onUpdateCartProduct = function (event) {
   // figure out how to get _id, quantity, and size into data
   let data = getFormFields(this);
   data._id = "JQUERY SELECT THE DATA-ID OF THE CART ITEM BEING DELETED";
+  console.log("this is updated cart product", data);
 
   capi.updateCartProduct(data)
     .then(cui.updateCartProductSuccess)

@@ -11,8 +11,10 @@
       <thead>
         <tr>
           <th>Item</th>
-          <th>Unit Cost</th>
+          <th>Price</th>
           <th class="text-center">Quantity</th>
+          <th class="text-center">Size</th>
+          <th class="text-center">Update</th>
           <th class="text-right">Total</th>
           <th></th>
         </tr>
@@ -20,11 +22,41 @@
       <tbody>
         {{#each this}}
           <tr>
-            <td class="vert-align">{{title}}</td>
-            <td class="vert-align">{{price}}</td>
-            <td class="text-center vert-align">{{quantity}}</td>
-            <td class="text-right vert-align">{{price}}{{quantity}}</td>
-            <td class="text-center vert-align destroy-cart-product-button" data-id="{{_id}}"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
+            <form>
+              <input type="hidden" name="_id" data-id="{{_id}}">
+              <td class="vert-align">{{title}}</td>
+              <td class="vert-align">{{price}}</td>
+              <td class="text-center vert-align">
+                <select class="form-control cart-dropdown" value="{{quantity}}" name="cart-quantity">
+                  <option value="{{quantity}}">{{quantity}}</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </td>
+              <td class="text-center vert-align">
+                <select class="form-control cart-dropdown" value="{{size}}" name="size">
+                  <option value="{{size}}">{{size}}</option>
+                  <option value="XXS">XXS</option>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                </select>
+              </td>
+              <td class="text-center vert-align">
+                <button type="submit" class="btn btn-default update-button">Update</button>
+              </td>
+              <td class="text-right vert-align">{{price}}{{quantity}}</td>
+              <td class="text-center vert-align destroy-cart-product-button" data-id="{{_id}}"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
+            </form>
           </tr>
           {{else}}
             <tr>
@@ -38,11 +70,12 @@
   </div>
 
 
+
   <div class="col-sm-3 pull-right">
     <table class="table">
       <thead>
         <tr>
-          <th colspan="3" class="text-center">Order sumary</th>
+          <th colspan="3" class="text-center">Order Summary</th>
         </tr>
       </thead>
       <tbody>
