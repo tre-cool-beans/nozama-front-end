@@ -27,8 +27,9 @@ const renderCart = (cart_data) => {
   // ugly here.
 
   store.user.sub_total = 0;
-  store.user.shipping = 10;
+  store.user.shipping = store.user.cart.length === 0 ? 0 : 10;
   store.user.tax_rate = 0.06;
+
   // Copy this code out to create total_price key
   for (let i = 0; i < store.user.cart.length; i++) {
     store.user.sub_total += store.user.cart[i].price;
