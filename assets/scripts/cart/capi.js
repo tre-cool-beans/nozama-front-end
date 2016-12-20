@@ -43,9 +43,19 @@ const destroyCartProduct = (data) =>
       },
   });
 
+const emptyCart = () =>
+  $.ajax({
+      url: config.host + '/empty-cart/' + store.user._id,
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
+  });
+
 module.exports = {
   indexCartProducts,
   createCartProduct,
   updateCartProduct,
   destroyCartProduct,
+  emptyCart,
 };

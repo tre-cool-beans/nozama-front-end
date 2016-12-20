@@ -27,7 +27,7 @@ const indexCartProductsSuccess = (user_data) => {
 // the updated user's cart (response_data.cart)
 const createCartProductSuccess = (response_data) => {
   store.user.cart = response_data.cart;
-  $('#messages').text('ADDED TO CART SUCCESSFULLY!');
+  $('#messages').text('Added to Cart');
 
   // Update user cart data stored locally by setting
   // the response cart to the store user cart
@@ -35,13 +35,19 @@ const createCartProductSuccess = (response_data) => {
 
 const updateCartProductSuccess = (response_data) => {
   store.user.cart = response_data.cart;
-  $('#messages').text('ADDED TO CART SUCCESSFULLY!');
+  $('#messages').text('Updated Cart');
   content.renderCart(response_data.cart);
 };
 
 const destroyCartProductSuccess = (response_data) => {
   store.user.cart = response_data.cart;
-  $('#messages').text('ADDED TO CART SUCCESSFULLY!');
+  $('#messages').text('Removed Cart Product');
+  content.renderCart(response_data.cart);
+};
+
+const emptyCartSuccess = (response_data) => {
+  store.user.cart = response_data.cart;
+  $('#messages').text('Emptied Cart');
   content.renderCart(response_data.cart);
 };
 
@@ -56,5 +62,6 @@ module.exports = {
   createCartProductSuccess,
   updateCartProductSuccess,
   destroyCartProductSuccess,
+  emptyCartSuccess,
   checkoutSuccess,
 };

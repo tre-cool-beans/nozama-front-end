@@ -5,7 +5,6 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const capi = require('./capi');
 const cui = require('./cui');
 
-
 const onIndexCartProducts = function (event) {
 
   event.preventDefault();
@@ -54,6 +53,12 @@ const onDestroyCartProduct = function (event) {
 
   capi.destroyCartProduct(data)
     .then(cui.destroyCartProductSuccess)
+    .catch(cui.failure);
+};
+
+const onEmptyCart = function () {
+  capi.emptyCart()
+    .then(cui.emptyCartSuccess)
     .catch(cui.failure);
 };
 
