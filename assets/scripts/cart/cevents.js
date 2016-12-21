@@ -55,10 +55,10 @@ const addProductPageHandlers = () => {
 
   if (!store.user) {
     $('#add-to-cart-button').text('Sign In to Add to Cart');
-    $('.purchase').on('click', (event) => event.preventDefault());
+    $('.purchase').on('submit', (event) => event.preventDefault());
   } else {
     $('#add-to-cart-button').text('Add to Cart');
-    $('.purchase').on('click', onCreateCartProduct);
+    $('.purchase').on('submit', onCreateCartProduct);
   }
 };
 
