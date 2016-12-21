@@ -5,7 +5,6 @@ const productEvents = require('../products/pevents');
 
 const success = () => {
   $('#messages').text('success');
-  console.log("inside sign up success");
 };
 
 const changePasswordSuccess = () => {
@@ -17,7 +16,6 @@ const changePasswordSuccess = () => {
 const signInSuccess = (data) => {
   store.user = data.user;
   $('.modal-input').val('');
-  console.log($('.modal-input'));
   $('.nav-list > li').toggleClass('hidden');
   $('.collapse').collapse('hide');
   success(data);
@@ -26,7 +24,6 @@ const signInSuccess = (data) => {
 const signOutSuccess = () => {
   store.user = null;
   $('.modal-input').val('');
-  console.log('SIGN OUT SUCCESS!');
   $('.nav-list > li').toggleClass('hidden');
   success(store.user);
   productEvents.onIndexProducts();
@@ -34,7 +31,6 @@ const signOutSuccess = () => {
 
 const failure = (error) => {
   $('#messages').text('fail');
-  console.error(error);
 };
 
 module.exports = {

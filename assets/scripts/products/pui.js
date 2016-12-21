@@ -6,21 +6,17 @@ const content = require('../content-render');
 
 const success = (data) => {
   $('#messages').text('success');
-  console.log(data);
 };
 
 const failure = (error) => {
   $('#messages').text('fail');
-  console.error(error);
 };
 
 const indexProductsSuccess = (response_data) => {
-  console.log(response_data);
   content.renderProducts(response_data.products);
 };
 
 const showProductSuccess = (response_data) => {
-  console.log(response_data);
   content.renderProduct(response_data.product);
 };
 

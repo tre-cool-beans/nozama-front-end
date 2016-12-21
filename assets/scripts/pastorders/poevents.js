@@ -26,8 +26,6 @@ const onCreatePastOrder = function() {
     }
   };
 
-  console.log("THIS IS PAST ORDER SENDING DATA: ");
-  console.log(data);
   poapi.createPastOrder(data)
     .then(poui.createPastOrderSuccess)
     .catch(poui.failure);
@@ -42,7 +40,6 @@ const addPastOrderHandlers = () => {
   // $('.purchase').on('submit', onCreateCartProduct );
   $('#checkout-button').off();
   $('#checkout-button').on('click', onCreatePastOrder);
-  console.log('PAST ORDER HANDLERS HAVE BEEN TRIGGERED');
 };
 
 const addHandlers = () => {

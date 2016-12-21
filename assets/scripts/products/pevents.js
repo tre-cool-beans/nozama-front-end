@@ -12,8 +12,6 @@ const onIndexProducts = function () {
 };
 
 const onShowProduct = function () {
-  console.log('made it to onShowProduct');
-  console.log($(this).data().productid);
   let productid = $(this).data().productid;
   papi.showProduct(productid)
     .then(pui.showProductSuccess)
