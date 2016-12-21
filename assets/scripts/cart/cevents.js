@@ -102,7 +102,14 @@ const addCartProductHandlers = () => {
   $('.size-dropdown').on('change', onUpdateSize);
 
   $('.destroy-cart-product-button').on('click', onDestroyCartProduct);
-  $('#checkout-button').on('click', onCheckout);
+
+  if (store.user.cart.length === 0) {
+    $('#checkout-button').text('Please Consume to Checkout');
+    $('#checkout-button').on('click', (event) => event.preventDefault());
+  } else {
+    $('#checkout-button').text('Checkout');
+    $('#checkout-button').on('click', onCheckout);
+  }
 };
 
 const addHandlers = () => {
