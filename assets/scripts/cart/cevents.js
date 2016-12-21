@@ -21,29 +21,6 @@ const onCreateCartProduct = function (event) {
     .catch(cui.failure);
 };
 
-const onUpdateCartProduct = function (event) {
-  event.preventDefault();
-
-  let product_id = $(this).data().id;
-
-  let data = {
-    _id: product_id,
-    size: $('#' + product_id + '-size').val(),
-    quantity: $('#' + product_id + '-quantity').val(),
-  };
-
-  if (!data.size) { delete data.size; }
-  if (!data.quantity) { delete data.quantity; }
-
-  console.log('THIS BE UPDATA');
-  console.log(data);
-
-  // figure out how to get _id, quantity, and size into data
-  capi.updateCartProduct(data)
-    .then(cui.updateCartProductSuccess)
-    .catch(cui.failure);
-};
-
 const onDestroyCartProduct = function (event) {
   event.preventDefault();
 
@@ -77,13 +54,45 @@ const addProductPageHandlers = () => {
   $('.purchase').on('submit', onCreateCartProduct);
 };
 
+const onUpdateCartProduct = function (data) {
+  capi.updateCartProduct(data)
+  .then(cui.updateCartProductSuccess)
+  .catch(cui.failure);
+};
+
+const onUpdateQuantity = function(event) {
+  event.preventDefault();
+
+  let data = {
+    _id: $(this).data().id,
+    quantity: $(this).val(),
+  };
+
+  onUpdateCartProduct(data);
+};
+
+const onUpdateSize = function(event) {
+  event.preventDefault();
+
+  let data = {
+    _id: $(this).data().id,
+    size: $(this).val(),
+  };
+
+  onUpdateCartProduct(data);
+};
+
+
 const addCartProductHandlers = () => {
-  // Trigger this when the My Cart template is loaded
-  $('.update-cart-button').off();
   $('.destroy-cart-product-button').off();
   $('#checkout-button').off();
 
-  $('.update-cart-button').on('click', onUpdateCartProduct);
+  $('.quantity-dropdown').off();
+  $('.size-dropdown').off();
+
+  $('.quantity-dropdown').on('change', onUpdateQuantity);
+  $('.size-dropdown').on('change', onUpdateSize);
+
   $('.destroy-cart-product-button').on('click', onDestroyCartProduct);
   $('#checkout-button').on('click', onCheckout);
 };

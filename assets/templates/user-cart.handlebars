@@ -14,7 +14,6 @@
           <th>Price</th>
           <th class="text-center">Quantity</th>
           <th class="text-center">Size</th>
-          <th class="text-center">Update</th>
           <th class="text-right">Total</th>
           <th></th>
         </tr>
@@ -28,7 +27,7 @@
               <td class="vert-align">{{title}}</td>
               <td class="vert-align">${{price}}</td>
               <td class="text-center vert-align">
-                <select class="form-control cart-dropdown" value="{{quantity}}" name="cart-quantity" id="{{_id}}-quantity">
+                <select class="form-control cart-dropdown quantity-dropdown" value="{{quantity}}" name="cart-quantity" data-id="{{_id}}">
                   <option value="{{quantity}}" selected disabled>{{quantity}}</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -43,7 +42,7 @@
                 </select>
               </td>
               <td class="text-center vert-align">
-                <select class="form-control cart-dropdown" value="{{size}}" name="size" id="{{_id}}-size">
+                <select class="form-control cart-dropdown size-dropdown" value="{{size}}" name="size" data-id="{{_id}}">
                   <option value="{{size}}">{{size}}</option>
                   <option value="XXS">XXS</option>
                   <option value="XS">XS</option>
@@ -51,9 +50,6 @@
                   <option value="M">M</option>
                   <option value="L">L</option>
                 </select>
-              </td>
-              <td class="text-center vert-align">
-                <button type="button" class="btn btn-default update-cart-button" data-id="{{_id}}">Update</button>
               </td>
               <td class="text-right vert-align">${{line_price}}</td>
               <td class="text-center vert-align destroy-cart-product-button" data-id="{{_id}}"><i class="remove-item"><i class="glyphicon glyphicon-remove"></i></td>
