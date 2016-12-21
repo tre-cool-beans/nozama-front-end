@@ -24,12 +24,13 @@
             <div class="media-body">
               <h4 class="media-heading">{{this.title}}</h4>
               <p>{{this.description}}</p>
+              <p>Price: ${{this.price}} // Quantity: {{this.quantity}} // Size: {{this.size}}</p>
             </div>
           </div>
         </div>
 
           <div class="col-0-1">
-              <p>${{this.price}}</p>
+              <p>${{this.line_price}}</p>
           </div>
         {{/each}}
 
