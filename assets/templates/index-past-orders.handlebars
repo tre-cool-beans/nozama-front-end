@@ -9,12 +9,12 @@
   {{#each this}}
   <div class="container">
   <div class="row-0">
-    <div class="col-xs-12">
-      <p> Ordered on: {{createdAt}}</p>
+    <div class="col-xs-12 past-order-content">
+      <p> Ordered on:  {{purchase_date}}</p>
     </div>
 
         {{#each cart}}
-        <div class="col-0-0">
+        <div class="col-0-0 past-order-content">
           <div class="media">
             <div class="media-left">
               <a href="#">
@@ -29,19 +29,17 @@
         </div>
 
           <div class="col-0-1">
-            <p>{{this.price}}</p>
+              <p>${{this.price}}</p>
           </div>
         {{/each}}
 
 
-
-
-      <div class="col-0-0">
-        <p> Total:</p>
-      </div>
+        <div class="col-0-0">
+            <p class="text-right">Total: </p>
+        </div>
 
       <div class="col-0-1">
-         <p>{{total_price}}</p>
+        <p>${{total_price}}0</p>
       </div>
 
       </div>

@@ -46,8 +46,15 @@ const renderCart = (cart_data) => {
 };
 
 const renderPastOrders = (past_orders) => {
+  for (let i = 0; i < past_orders.length; i++) {
+    past_orders[i].purchase_date = past_orders[i].createdAt.split('T')[0];
+    past_orders[i].purchase_time = past_orders[i].createdAt.split('T')[1].split('.')[0];
+  }
+
   $('#content').html(indexPastOrders(past_orders));
   $('#content').trigger('show-past-order-change');
+
+  // $('#total-price').text('$' + store.pastorder.total_price.toFixed(2));
 };
 
 const renderCheckout = () => {

@@ -4,7 +4,7 @@ An e-commerce site for a hypothetical luxury clothing purveyor created as a grou
 
 [Deployed Front End](https://tre-cool-beans.github.io/nozama-front-end/)
 
-[Back End Repo](https://github.com/tre-cool-beans/nozama-back-end)
+[Back End Repo](https://github.com/tre-cool-beans/nozama-back-end)<br>
 [Front End Repo](https://github.com/tre-cool-beans/nozama-front-end)
 
 ## Introduction
