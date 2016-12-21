@@ -2,6 +2,8 @@
 
 const getFormFields = require(`../../../lib/get-form-fields`);
 
+const store = require('../store');
+
 const capi = require('./capi');
 const cui = require('./cui');
 
@@ -51,7 +53,13 @@ const onCheckout = () => {
 const addProductPageHandlers = () => {
   $('.purchase').off();
 
-  $('.purchase').on('submit', onCreateCartProduct);
+  if (!store.user) {
+    $('#add-to-cart-button').text('Sign In to Add to Cart');
+    $('.purchase').on('click', (event) => event.preventDefault());
+  } else {
+    $('#add-to-cart-button').text('Add to Cart');
+    $('.purchase').on('click', onCreateCartProduct);
+  }
 };
 
 const onUpdateCartProduct = function (data) {
