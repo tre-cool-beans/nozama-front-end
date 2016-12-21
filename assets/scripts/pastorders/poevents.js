@@ -19,8 +19,9 @@ const onIndexPastOrders = function (event) {
 const onCreatePastOrder = function() {
   let data = {
     pastorder: {
-      comment: "",
       cart: store.user.cart,
+      shipping: store.user.shipping,
+      tax: store.user.tax,
       total_price: store.user.total,
     }
   };
