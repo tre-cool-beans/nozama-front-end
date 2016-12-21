@@ -1919,7 +1919,11 @@ webpackJsonp([0],[
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-	  return "<div class=\"container-fluid product\">\n  <div class=\"row visible-xs product-mobile\">\n    <div class=\"col-xs-12 text-center\">\n      <h2 class=\"product-title\">Tuscan urns</h2>\n      <div class=\"product-price\">\n        <span class=\"price\">14.00</span>\n      </div>\n    </div>\n  </div>\n  <div class=\"container-fluid hidden-xs\">\n  <div class=\"row\">\n    <ol class=\"breadcrumb\">\n      <li><a id=\"home-crumb\">Home</a></li>\n      <li class=\"active\">"
+	  return "<div class=\"container-fluid product\">\n  <div class=\"row visible-xs\">\n    <div class=\"col-xs-12 text-center\">\n      <h2 class=\"product-title\">"
+	    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+	    + "</h2>\n      <div class=\"product-price\">\n        <span class=\"price\">"
+	    + alias4(((helper = (helper = helpers.price || (depth0 != null ? depth0.price : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"price","hash":{},"data":data}) : helper)))
+	    + "</span>\n      </div>\n    </div>\n  </div>\n  <div class=\"container-fluid hidden-xs\">\n  <div class=\"row\">\n    <ol class=\"breadcrumb\">\n      <li><a id=\"home-crumb\">Home</a></li>\n      <li class=\"active\">"
 	    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
 	    + "</li>\n    </ol>\n  </div>\n</div>\n  <div class=\"row\">\n    <div class=\"col-sm-7 col-offset-1\">\n      <img src=\""
 	    + alias4(((helper = (helper = helpers.image_url || (depth0 != null ? depth0.image_url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"image_url","hash":{},"data":data}) : helper)))
