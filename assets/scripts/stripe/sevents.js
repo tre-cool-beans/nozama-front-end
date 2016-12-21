@@ -13,9 +13,6 @@ const onChargeCard = function(data) {
     token: data.id,
     amount: store.user.total * 100 // Need to sent it in cents
   };
-  console.log("onChargeCard data before sending: ");
-  console.log(data);
-  console.log(req_data);
   sapi.chargeCard(req_data);
 };
 
@@ -25,7 +22,7 @@ const onCreateToken = function(event) {
   // Disable the submit button to prevent repeated clicks:
   $payment_form.find('.submit-payment').prop('disabled', true);
   // Re-enable the button after 3 seconds in case user needs to re-submit.
-  setTimeout(() => $payment_form.find('.submit-payment').prop('disabled', false), 2000);
+  setTimeout(() => $payment_form.find('.submit-payment').prop('disabled', false), 2500);
   // We are sending the whole form as getFormFields will not
   // work on this because the Stripe form fields have no name
   // and should not ever have a name.
@@ -39,7 +36,7 @@ const onCreateToken = function(event) {
       return poevents.onCreatePastOrder();
     })
     .then(cevents.onEmptyCart)
-    .then(setTimeout(poevents.onIndexPastOrders, 2000))
+    .then(() => setTimeout(poevents.onIndexPastOrders, 2000))
     .catch(sui.failure);
 };
 

@@ -8,7 +8,6 @@ const capi = require('./capi');
 const cui = require('./cui');
 
 const onIndexCartProducts = function (event) {
-
   event.preventDefault();
   capi.indexCartProducts()
   .then(cui.indexCartProductsSuccess)
