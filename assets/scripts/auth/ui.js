@@ -15,6 +15,7 @@ const changePasswordSuccess = () => {
 
 const signInSuccess = (data) => {
   store.user = data.user;
+  $('#content').trigger('show-one-product-change');
   $('.modal-input').val('');
   $('.nav-list > li').toggleClass('hidden');
   $('.collapse').collapse('hide');
