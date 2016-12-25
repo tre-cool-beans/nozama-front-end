@@ -8,13 +8,18 @@ const ui = require('./ui');
 const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
+  console.log(data);
+  if (data.credentials.password !== data.credentials.password_confirm) {
+ return ui.signUpFailure();
+}
+
   api.signUp(data)
     .then((response_data) => {
       ui.success(response_data);
       return api.signIn(data);
     })
     .then(ui.signInSuccess)
-    .catch(ui.failure);
+    .catch(ui.signUpFailure);
 };
 
 const onSignIn = function (event) {
