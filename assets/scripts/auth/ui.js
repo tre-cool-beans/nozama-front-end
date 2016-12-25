@@ -3,14 +3,20 @@
 const store = require('../store');
 const productEvents = require('../products/pevents');
 
-const success = () => {
-  $('#messages').text('success');
+const changePasswordSuccess = () => {
+  $('#change-password-form > div > span.help-block').html('Password successfully changed');
+  $('.form-control').val('');
+  $('#change-password-form > div.form-group').addClass('has-success');
+  setTimeout(function() {
+    $('#cp-dropdown').dropdown('toggle');
+    $('#change-password-form > div > span.help-block').html('');
+    $('#change-password-form > div.form-group').removeClass('has-success');
+  }, 1000);
 };
 
-const changePasswordSuccess = () => {
-  $('#messages').text('success');
-  $('.form-control').val('');
-  $('#cp-dropdown').dropdown('toggle');
+const changePasswordFailure = () => {
+  $('#change-password-form > div.form-group').addClass('has-error');
+  $('#change-password-form > div > span.help-block').html('Please enter a valid password');
 };
 
 const signInSuccess = (data) => {
@@ -23,14 +29,12 @@ const signInSuccess = (data) => {
   $('.form-control').val('');
   $('.nav-list > li').toggleClass('hidden');
   $('.collapse').collapse('hide');
-  success(data);
 };
 
 const signOutSuccess = () => {
   store.user = null;
   $('.form-control').val('');
   $('.nav-list > li').toggleClass('hidden');
-  success(store.user);
   productEvents.onIndexProducts();
 };
 
@@ -42,16 +46,12 @@ const signInFailure = () => {
   $('#sign-in-form > div.form-group').addClass('has-error');
   $('#sign-in-form > div > span.help-block').html('Invalid email or password');
 };
-const failure = (error) => {
-  $('#messages').text('fail');
-};
 
 module.exports = {
   signInFailure,
   signUpFailure,
-  failure,
-  success,
   changePasswordSuccess,
+  changePasswordFailure,
   signInSuccess,
   signOutSuccess,
 };
