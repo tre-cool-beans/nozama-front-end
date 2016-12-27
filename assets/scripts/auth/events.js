@@ -8,7 +8,6 @@ const ui = require('./ui');
 const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
-  console.log(data);
   if (data.credentials.password !== data.credentials.password_confirmation) {
     ui.signUpFailure();
   } else {
