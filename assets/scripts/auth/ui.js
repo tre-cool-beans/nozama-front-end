@@ -43,6 +43,12 @@ const signUpFailure = () => {
   $('#sign-up-form > div.form-group').addClass('has-error');
   $('#sign-up-form > div > span.help-block').html('E-mail and/or password invalid');
 };
+
+const signUpSuccess = () => {
+  $('#sign-up-form > div.form-group').removeClass('has-error');
+  $('#sign-up-form > div > span.help-block').html('');
+};
+
 const signInFailure = () => {
   $('#sign-in-form > div.form-group').addClass('has-error');
   $('#sign-in-form > div > span.help-block').html('Invalid email or password');
@@ -51,6 +57,7 @@ const signInFailure = () => {
 module.exports = {
   signInFailure,
   signUpFailure,
+  signUpSuccess,
   changePasswordSuccess,
   changePasswordFailure,
   signInSuccess,
