@@ -27,7 +27,7 @@ const signInSuccess = (data) => {
   $('#sign-in-form > div.form-group').removeClass('has-error');
   $('span.help-block').html('');
   $('#content').trigger('show-one-product-change');
-  $('.form-control').val('');
+  // $('.form-control').val('');
   $('.nav-list > li').toggleClass('hidden');
   $('.collapse').collapse('hide');
 };
