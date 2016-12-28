@@ -13,7 +13,7 @@ const onChargeCard = function(data) {
     token: data.id,
     amount: store.user.total * 100 // Need to sent it in cents
   };
-  sapi.chargeCard(req_data);
+  return sapi.chargeCard(req_data);
 };
 
 const onCreateToken = function(event) {

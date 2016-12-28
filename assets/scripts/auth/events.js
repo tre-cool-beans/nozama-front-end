@@ -8,13 +8,17 @@ const ui = require('./ui');
 const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
-  api.signUp(data)
-    .then((response_data) => {
-      ui.success(response_data);
-      return api.signIn(data);
-    })
-    .then(ui.signInSuccess)
-    .catch(ui.failure);
+  if (data.credentials.password !== data.credentials.password_confirmation) {
+    ui.signUpFailure();
+  } else {
+    api.signUp(data)
+      .then((response_data) => {
+        ui.signUpSuccess(response_data);
+        return api.signIn(data);
+      })
+      .then(ui.signInSuccess)
+      .catch(ui.signUpFailure);
+  }
 };
 
 const onSignIn = function (event) {
@@ -22,7 +26,7 @@ const onSignIn = function (event) {
   event.preventDefault();
   api.signIn(data)
     .then(ui.signInSuccess)
-    .catch(ui.failure);
+    .catch(ui.signInFailure);
 };
 
 const onChangePassword = function (event) {
@@ -30,7 +34,7 @@ const onChangePassword = function (event) {
   event.preventDefault();
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
-    .catch(ui.failure);
+    .catch(ui.changePasswordFailure);
 };
 
 const onSignOut = (event) => {

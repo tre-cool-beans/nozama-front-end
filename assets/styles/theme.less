@@ -16,10 +16,6 @@ a {
 .change-password-dropdown {
   left: -120px;
 }
-// Make form centered with larger min width for inputs
-.modal-input {
-  min-width: 220px;
-}
 // Pull price span to overlay on top right of image
 .price-container {
   top: 0;
@@ -77,6 +73,7 @@ margin-bottom: 50px;
 }
 .form-control {
   cursor: pointer;
+  min-width: 220px;
 }
 h1 {
   margin: 0 40px 0 40px;
@@ -87,8 +84,34 @@ h1 {
 .credit-card-content {
   margin-left: 20px;
 }
-.show-product-padding {
-  padding-right: 80px;
+#main-nav{
+
+  @media (max-width: 767px) {
+    padding: 0 15px 0 15px;
+  }
+}
+#content > div > div.row {
+  .show-product-padding {
+    padding-right: 80px;
+  }
+  @media (max-width: 767px) {
+
+    padding: 0 15px 0 15px;
+
+    .show-product-padding {
+      padding-right: 0;
+    }
+    #add-to-cart-button {
+      .pull-left();
+  }
+.paging.clearfix.text-center{
+  padding-top: 50px;
+  margin-bottom: 0;
+  }
+  footer.footer{
+  padding-top: 25px;
+  }
+}
 }
 .past-order-content, .media {
   padding: 0 20px 0 20px;
