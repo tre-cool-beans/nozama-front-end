@@ -6,7 +6,8 @@ const productEvents = require('../products/pevents');
 const changePasswordSuccess = () => {
   $('#change-password-form > div.form-group').removeClass('has-error');
   $('#change-password-form > div > span.help-block').html('Password successfully changed');
-  $('.form-control').val('');
+
+  $('#change-password-form > div > input').val('');
   $('#change-password-form > div.form-group').addClass('has-success');
   setTimeout(function() {
     $('#cp-dropdown').dropdown('toggle');
