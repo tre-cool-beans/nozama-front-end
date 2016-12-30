@@ -6,7 +6,8 @@ const productEvents = require('../products/pevents');
 const changePasswordSuccess = () => {
   $('#change-password-form > div.form-group').removeClass('has-error');
   $('#change-password-form > div > span.help-block').html('Password successfully changed');
-  $('.form-control').val('');
+
+  $('#change-password-form > div > input').val('');
   $('#change-password-form > div.form-group').addClass('has-success');
   setTimeout(function() {
     $('#cp-dropdown').dropdown('toggle');
@@ -27,7 +28,7 @@ const signInSuccess = (data) => {
   $('#sign-in-form > div.form-group').removeClass('has-error');
   $('span.help-block').html('');
   $('#content').trigger('show-one-product-change');
-  $('.form-control').val('');
+  // $('.form-control').val('');
   $('.nav-list > li').toggleClass('hidden');
   $('.collapse').collapse('hide');
 };
